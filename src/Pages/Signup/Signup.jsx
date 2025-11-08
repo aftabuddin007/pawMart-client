@@ -3,29 +3,64 @@ import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { toast } from 'react-toastify';
+import { updateProfile } from 'firebase/auth';
 
 const Signup = () => {
   const [show,setShow]=useState(false)
   const {createUser,setUser,googleSignIn} = use(AuthContext)
+  const [passwordError,setPasswordError] = useState('')
+
   const navigate = useNavigate()
  const handleSignup=(e)=>{
-    e.preventDefault();
-    const form  = e.target
-    const name = form.name.value
-    const email = form.email.value
-    const photo = form.photo.value
-    const password = form.password.value
-    console.log({name,email,photo,password})
-    createUser(email,password)
-    .then(res=>{
-        const user = res.user
-        setUser(user)
-        toast.success('Sign Up Successfully')
+e.preventDefault();
+  // 
+  const form  = e.target
+  const name = form.name.value
+
+  const email = form.email.value
+  const photo = form.photo.value
+  const password = form.password.value
+  const hasUpper = /[A-Z]/.test(password);
+  if(!hasUpper){
+    setPasswordError('Password must have at least one uppercase letter')
+    return;
+  }
+  const hasLower = /[a-z]/.test(password);
+  if(!hasLower){
+    setPasswordError('Password must have at least one lowercase letter')
+    return;
+  }
+  if(password.length <6){
+    setPasswordError('Password must be at least 6 characters')
+    return;
+  }
+  // console.log({name,email,photo,password})
+  createUser(email,password,name,photo)
+  .then(res=>{
+    const user = res.user
+    updateProfile(user,{
+      displayName: name,
+      photoURL: photo
     })
-    .catch(err=>{
-        console.log(err.message)
-    })
- }
+    .then(()=>{
+    setUser(user)
+    toast.success('SignUp Successful')
+    navigate('/')
+  }).catch(err=>{
+    toast.err(err.message)
+    
+  })
+})
+  .catch(err=>{
+    toast.error('Some thing went wrong.Please try again.')
+console.log(err.code)
+  })
+}
+
+
+
+
+ 
     const handleGoogleSignIn =()=>{
         googleSignIn()
          .then(res=>{
@@ -64,7 +99,7 @@ const Signup = () => {
                                <span onClick={()=>setShow(!show)} className='absolute right-7 top-8 cursor-pointer z-50'>{show ? <FaRegEye />:<FaEyeSlash />}</span>
                                </div>
                         {
-                    //  passwordError && <p className='text-red-500 text-xs'>{passwordError}</p>
+                     passwordError && <p className='text-red-500 text-xs'>{passwordError}</p>
                 }
                      <button type='submit' className="btn btn-success text-white mt-4">Sign Up</button>
 

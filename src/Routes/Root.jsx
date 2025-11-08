@@ -4,16 +4,24 @@ import AuthLayout from "../Components/AuthLayout/Authlayout";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Signup/Signup";
 import Error from "../Components/Error/Error";
+import HomePage from "../Pages/HomePage/HomePage";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    children:[
+       {
+    path:'/',
+    element:<HomePage></HomePage>
+  }
+    ]
   },{
     path:'/auth',
     element:<AuthLayout></AuthLayout>,
     children:[
+     
         {
             path:'/auth/login',
             element:<Login></Login>,

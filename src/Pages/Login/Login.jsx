@@ -22,8 +22,8 @@ const {signInEmail,googleSignIn} = use(AuthContext)
             navigate('/')
         })
         .catch(err=>{
-        // console.log(err.message)
-        toast.error(err.message)
+        toast.error('Some thing went wrong.Please try again.')
+        console.log(err.message)
     })
     }
     const handleGoogleSignIn =()=>{
