@@ -47,29 +47,77 @@ const handleTheme = (checked)=>{
         tabIndex="-1"
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <li><NavLink to='/'className={navLinkClass}> Home</NavLink></li>
-      <li><NavLink to='/auth/login' className={navLinkClass}> Login In</NavLink></li>
-      <li><NavLink to='/auth/signup' className={navLinkClass}> Sign Up</NavLink></li>
+      <li><NavLink to='/pets-supplies' className={navLinkClass}> Pets/Supplies</NavLink></li>
+      {user &&<> 
+      <li><NavLink to='/add-list' className={navLinkClass}> Add Listing</NavLink></li>
+      <li><NavLink to='/my-list' className={navLinkClass}> My Listings</NavLink></li>
+      <li><NavLink to='/my-order' className={navLinkClass}> My Orders</NavLink></li>
+      
+      </>}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">EcoCart</a>
+    <div className='flex gap-2'> 
+
+    <a className="btn btn-ghost text-xl font-bold "><img src="https://img.icons8.com/stickers/100/cat-footprint.png" alt="" className='h-10 w-10' /> PawMart</a>
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><NavLink to='/' className={navLinkClass}> Home</NavLink></li>
-      <li><NavLink to='/auth/login' className={navLinkClass}> Login In</NavLink></li>
-      <li><NavLink to='/auth/signup' className={navLinkClass}> Sign Up</NavLink></li>
+      <li><NavLink to='/'className={navLinkClass}> Home</NavLink></li>
+      <li><NavLink to='/pets-supplies' className={navLinkClass}> Pets/Supplies</NavLink></li>
+      {user &&<> 
+      <li><NavLink to='/add-list' className={navLinkClass}> Add Listing</NavLink></li>
+      <li><NavLink to='/my-list' className={navLinkClass}> My Listings</NavLink></li>
+      <li><NavLink to='/my-order' className={navLinkClass}> My Orders</NavLink></li>
+      
+      </>}
       
     </ul>
   </div>
-  <div className="navbar-end gap-3">
+  <div className="navbar-end ">
 {/* theme */}
 <input onChange={(e)=>handleTheme(e.target.checked)} 
     defaultChecked={localStorage.getItem('theme') === "dark"}
     type="checkbox" value="synthwave" className="toggle theme-controller" />
 
-{user?     <Link onClick={handleLogout} className='btn  '>LogOut</Link>
-:    <Link to='/auth/login' className='btn  '>Log In </Link>
-}
+
+
+
+<div className="navbar-end flex ">
+    
+    {
+      user ? (<div className='flex justify-between items-center gap-4'>
+    <div >
+
+<div className="dropdown dropdown-end z-50">
+  <div tabIndex={0} role="button" className=" m-1"><img src={user?.photoURL } alt="image" className='w-12 h-12 rounded-full object-cover'/></div>
+  <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+    <li>     <p>{user.displayName}</p>
+</li>
+<li>  <p>{user.email}</p> </li>
+    <li><button onClick={handleLogout} className="btn btn-primary
+"> LogOut</button></li>
+  </ul>
+</div>
+
+
+      
+    </div>
+
+    </div>)
+    :(<div className='flex justify-between gap-5'>
+<Link to='/auth/login' className="btn  btn-outline btn-primary
+"> Login</Link>
+<Link to='/auth/signup' className="btn btn-primary
+"> SignUp</Link>
+</div>)
+    }
+    
+  </div>
+
+
+
+
 
 
   </div>
