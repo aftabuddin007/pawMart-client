@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const PetCard = ({product}) => {
     // console.log(product)
-    const {name,category,price,location,image} = product;
+    const {name,category,price,location,image,_id} = product;
     return (
         <div>
             <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2 group">
@@ -35,7 +35,7 @@ const PetCard = ({product}) => {
 
         <div className="mt-5">
           <Link
-            to="/details/1"
+            to={`/product-details/${_id}`}
             className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
           >
             See Details →

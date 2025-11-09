@@ -10,7 +10,7 @@ e.preventDefault();
 const formData = {
     name:form.name.value,
     category:form.category.value,
-    price:form.price.value,
+    price:parseInt(form.price.value),
     location:form.location.value,
     description:form.description.value,
     image:form.image.value,

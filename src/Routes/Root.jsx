@@ -7,6 +7,8 @@ import Error from "../Components/Error/Error";
 import HomePage from "../Pages/HomePage/HomePage";
 import PetProducts from "../Components/PetProducts/PetProducts";
 import AddListPet from "../Pages/AddListPet/AddListPet";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
+import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 
 
 const router = createBrowserRouter([
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
   },{
     path:'/add-list',
     element:<AddListPet></AddListPet>
+  },{
+    path:'/product-details/:id',
+    element:<ProductDetails></ProductDetails>,
+    loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`)
+  },{
+    path:'/update-product/:id',
+    element:<UpdateProduct></UpdateProduct>,
+     loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`)
   }
     ]
   },{
