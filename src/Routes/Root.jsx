@@ -6,6 +6,7 @@ import Signup from "../Pages/Signup/Signup";
 import Error from "../Components/Error/Error";
 import HomePage from "../Pages/HomePage/HomePage";
 import PetProducts from "../Components/PetProducts/PetProducts";
+import AddListPet from "../Pages/AddListPet/AddListPet";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     path:'/pets-supplies',
     element:<PetProducts></PetProducts>,
     loader:() => fetch('http://localhost:3000/pet_product'),
+    
+  },{
+    path:'/add-list',
+    element:<AddListPet></AddListPet>
   }
     ]
   },{
