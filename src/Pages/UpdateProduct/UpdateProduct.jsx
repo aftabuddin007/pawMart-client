@@ -1,15 +1,58 @@
 import React, { use } from 'react';
 import { useLoaderData } from 'react-router';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 const UpdateProduct = () => {
     const {user} = use(AuthContext)
     console.log(user)
     const data = useLoaderData()
     const update = data.result
-
-    // console.log(update)
         const {name,price,_id,} = update;
+
+    const handleSubmit = (e)=>{
+        e.preventDefault();
+        const form = e.target;
+        const formData = {
+            productId: form.productId.value,
+productName: form.productName.value,
+buyerName: form.buyerName.value,
+email: form.email.value,
+quantity: parseInt(form.quantity.value),
+price: parseInt(form.price.value),
+address: form.address.value,
+phone: form.phone.value,
+date: form.date.value,
+additionalNotes: form.notes.value
+
+
+        }
+ console.log({formData})
+ fetch('http://localhost:3000/orders',{
+    method:'POST',
+    headers:{
+        "content-type":"application/json",
+    },
+    body:JSON.stringify(formData)
+}).then(res=>res.json())
+.then(data=>{
+    console.log(data)
+    toast.success('Product Added successfully')
+})
+.catch(err=>{
+    console.log(err)
+})
+
+
+
+
+
+
+    }
+
+
+
+
 
     return (
         <div>
@@ -18,7 +61,7 @@ const UpdateProduct = () => {
         Place Your Order
       </h2>
 
-      <form  className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4">
         {/* Buyer Name */}
         <div>
           <label className="block text-gray-600 mb-1">Buyer Name</label>
