@@ -15,12 +15,14 @@ const router = createBrowserRouter([
     children:[
        {
     path:'/',
-    element:<HomePage></HomePage>
+    element:<HomePage></HomePage>,
+    loader:()=>fetch('http://localhost:3000/recent-product')
+    
   },
        {
     path:'/pets-supplies',
     element:<PetProducts></PetProducts>,
-    loader:()=>fetch('http://localhost:3000/pet_product')
+    loader:() => fetch('http://localhost:3000/pet_product'),
   }
     ]
   },{

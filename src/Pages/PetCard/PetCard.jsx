@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const PetCard = ({product}) => {
-    const {name,category,price,location,image} = product
+    // console.log(product)
+    const {name,category,price,location,image} = product;
     return (
         <div>
             <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2 group">

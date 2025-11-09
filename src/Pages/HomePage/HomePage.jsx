@@ -4,13 +4,20 @@ import PetExpert from '../PetExpert/PetExpert';
 import PetCategory from '../PetCategory/PetCategory';
 import PetRecentList from '../PetRecentList/PetRecentList';
 import AdoptPet from '../AdoptPet/AdoptPet';
+import { useLoaderData } from 'react-router';
 
 const HomePage = () => {
+
+const recentPawPromise = useLoaderData()
+// console.log(recentPawPromise)
+
+
+
     return (
         <div>
             <HeroBanner></HeroBanner>
             <PetCategory></PetCategory>
-            <PetRecentList></PetRecentList>
+            <PetRecentList recentPawPromise={recentPawPromise}></PetRecentList>
             <AdoptPet></AdoptPet>
             <PetExpert></PetExpert>
         </div>
