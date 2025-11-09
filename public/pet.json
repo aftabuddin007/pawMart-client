@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Golden Retriever Puppy",
+    "category": "Pets",
+    "price": 0,
+    "location": "Dhaka",
+    "description": "Friendly 2-month-old puppy available for adoption.",
+    "image": "https://i.ibb.co.com/1GXprw59/pexels-kampus-8734474.jpg",
+    "email": "owner1@gmail.com",
+    "date": "2025-10-27"
+  },
+  {
+    "name": "Persian Cat",
+    "category": "Pets",
+    "price": 0,
+    "location": "Chittagong",
+    "description": "Calm and affectionate Persian cat, 1 year old.",
+    "image": "https://i.ibb.co.com/9mSTyY8D/pexels-ozrenildo-599492.jpg",
+    "email": "owner2@gmail.com",
+    "date": "2025-10-25"
+  },
+  {
+    "name": "Turtle Tank Setup",
+    "category": "Accessories",
+    "price": 35,
+    "location": "Sylhet",
+    "description": "Complete turtle tank with filter, rocks, and lamp.",
+    "image": "https://i.ibb.co.com/F4TnHvmj/pexels-billow926-2948812-15671714.jpg",
+    "email": "seller3@gmail.com",
+    "date": "2025-10-24"
+  },
+  {
+    "name": "Dog Food - Premium Beef Mix (5kg)",
+    "category": "Pet Food",
+    "price": 20,
+    "location": "Khulna",
+    "description": "High-protein dog food suitable for all breeds.",
+    "image": "https://i.ibb.co.com/GXYbDFv/pexels-mart-production-8434641.jpg",
+    "email": "shop4@gmail.com",
+    "date": "2025-10-26"
+  },
+  {
+    "name": "Cat Scratching Post",
+    "category": "Accessories",
+    "price": 15,
+    "location": "Rajshahi",
+    "description": "Durable cat scratching post to protect your furniture.",
+    "image": "https://i.ibb.co.com/j9sDq8wY/pexels-arina-krasnikova-7725976.jpg",
+    "email": "shop5@gmail.com",
+    "date": "2025-10-28"
+  },
+  {
+    "name": "Parrot Cage",
+    "category": "Accessories",
+    "price": 40,
+    "location": "Barishal",
+    "description": "Spacious parrot cage with toys and feeding bowls.",
+    "image": "https://i.ibb.co.com/27Mg52k8/pexels-omerfuyar-13309750.jpg",
+    "email": "seller6@gmail.com",
+    "date": "2025-10-30"
+  },
+  {
+    "name": "Rabbit Hay Feeder",
+    "category": "Pet Care Product",
+    "price": 10,
+    "location": "Dhaka",
+    "description": "Metal hay feeder perfect for rabbits and guinea pigs.",
+    "image": "https://i.ibb.co.com/RpydcsMh/3da71eb195d308213e89b521ef3d1219-jpg-720x720q80.jpg",
+    "email": "shop7@gmail.com",
+    "date": "2025-10-29"
+  },
+  {
+    "name": "Bulldog Puppy",
+    "category": "Pets",
+    "price": 0,
+    "location": "Gazipur",
+    "description": "Healthy 3-month-old bulldog puppy looking for a loving home.",
+    "image": "https://i.ibb.co.com/Vc6DZPNs/pexels-atomlaborblog-776078.jpg",
+    "email": "owner8@gmail.com",
+    "date": "2025-10-22"
+  },
+  {
+    "name": "Bird Vitamin Supplement",
+    "category": "Pet Care Product",
+    "price": 8,
+    "location": "Sylhet",
+    "description": "Essential vitamins for parrots and small birds.",
+    "image": "https://i.ibb.co.com/NQmZrHZ/pexels-pixabay-139398.jpg",
+    "email": "shop9@gmail.com",
+    "date": "2025-10-23"
+  },
+  {
+    "name": "Aquarium Starter Kit",
+    "category": "Accessories",
+    "price": 50,
+    "location": "Dhaka",
+    "description": "Includes tank, LED light, and water filter — perfect for beginners.",
+    "image": "https://i.ibb.co.com/fdsD7dbF/d21fd4caa32e73a8cb8b227521f78198-jpg-720x720q80.jpg",
+    "email": "seller10@gmail.com",
+    "date": "2025-10-31"
+  }
+]
