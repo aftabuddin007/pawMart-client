@@ -1,15 +1,17 @@
 import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { Link } from 'react-router';
 
 const MyListing = () => {
   const {user}=use(AuthContext)
     const [orders,setOrders] = useState([])
         const [loading,setLoading] = useState(true)
+
         useEffect(()=>{
           fetch(`http://localhost:3000/pet_products?email=${user?.email}`)
           .then(res=>res.json())
           .then(data=>{
-            console.log(data)
+            // console.log(data)
             setOrders(data)
             setLoading(false)
           })
@@ -17,6 +19,8 @@ const MyListing = () => {
         if(loading){
            return <p>loading....</p> 
         }
+      
+    
     return (
         <div className="overflow-x-auto bg-white rounded-2xl shadow-lg p-4 max-w-7xl mx-auto">
       <table className="min-w-full text-sm text-left">
@@ -60,12 +64,15 @@ const MyListing = () => {
               </td>
 
               <td className="py-3 px-4 flex items-center gap-2 justify-center">
-                <button
-                  onClick={() => handleUpdate(item)}
-                  className="border border-blue-400 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-1 rounded-md text-xs transition"
-                >
-                  Edit
-                </button>
+                <Link to={`/update-products/${item._id}`}
+  className="border border-blue-400 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-1 rounded-md text-xs transition"
+>
+   Edit 
+</Link>
+
+
+
+    
                 <button
                   onClick={() => handleDelete(item._id)}
                   className="border border-red-400 text-red-500 hover:bg-red-500 hover:text-white px-3 py-1 rounded-md text-xs transition"
@@ -78,6 +85,7 @@ const MyListing = () => {
           ))}
         </tbody>
       </table>
+      
     </div>
     );
 };
