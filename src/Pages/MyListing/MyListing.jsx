@@ -1,12 +1,14 @@
 import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link } from 'react-router';
+import Swal from 'sweetalert2';
 
 const MyListing = () => {
+
   const {user}=use(AuthContext)
     const [orders,setOrders] = useState([])
         const [loading,setLoading] = useState(true)
-
+  
         useEffect(()=>{
           fetch(`http://localhost:3000/pet_products?email=${user?.email}`)
           .then(res=>res.json())
@@ -16,10 +18,52 @@ const MyListing = () => {
             setLoading(false)
           })
         },[user])
+
+
         if(loading){
-           return <p>loading....</p> 
+           return <p>loading....</p>  
         }
-      
+ const handleDelete = (id) =>{
+ Swal.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+  if (result.isConfirmed) {
+
+
+
+    fetch(`http://localhost:3000/pet_product/${id}`,{
+        method:'DELETE',
+        headers:{
+            "content-type":"application/json",
+        },
+        
+    }).then(res=>res.json())
+    .then(data=>{
+        console.log(data)
+ setOrders(orders.filter(item => item._id !== id));
+
+        Swal.fire({
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
+    });
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+
+    
+  }
+});
+  
+}
+ 
     
     return (
         <div className="overflow-x-auto bg-white rounded-2xl shadow-lg p-4 max-w-7xl mx-auto">
@@ -63,24 +107,16 @@ const MyListing = () => {
                 </span>
               </td>
 
-              <td className="py-3 px-4 flex items-center gap-2 justify-center">
-                <Link to={`/update-products/${item._id}`}
-  className="border border-blue-400 text-blue-500 hover:bg-blue-500 hover:text-white px-3 py-1 rounded-md text-xs transition"
->
-   Edit 
-</Link>
-
-
-
-    
-                <button
-                  onClick={() => handleDelete(item._id)}
-                  className="border border-red-400 text-red-500 hover:bg-red-500 hover:text-white px-3 py-1 rounded-md text-xs transition"
-                >
-                  Delete
-                </button>
+              <div className="py-3 px-4 flex items-center gap-2 justify-center">
+<Link to={`/update-products/${item._id}`}
+  className="border border-blue-400 text-blue-500 hover:bg-blue-500
+   hover:text-white px-3 py-1 rounded-md text-xs transition">
+   Edit </Link>
+<button onClick={()=>handleDelete(item._id)} className="border border-red-400
+ text-red-500 hover:bg-red-500 hover:text-white px-3 py-1
+  rounded-md text-xs transition">Delete</button>
                 
-              </td>
+              </div>
             </tr>
           ))}
         </tbody>
