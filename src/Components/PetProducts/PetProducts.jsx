@@ -8,6 +8,7 @@ const PetProducts = () => {
     const data = useLoaderData();
     const [products,setProducts] = useState(data)
     const [loading,setLoading] = useState(false)
+    const [category,setCategory]=useState('All')
     const handleSearch = (e)=>{
         e.preventDefault()
         const searchText = e.target.search.value
@@ -19,6 +20,22 @@ const PetProducts = () => {
         setProducts(data)
         setLoading(false)
        })
+    }
+    const handleFilter = (e)=>{
+        e.preventDefault()
+        const selected = e.target.value
+        setCategory(selected)
+        setLoading(true)
+
+        const url = selected ==='All'?`http://localhost:3000/filterProduct`
+        :`http://localhost:3000/filterProduct?category=${selected}`;
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data)
+            setProducts(data)
+            setLoading(false)
+        })
     }
     if(loading){
         return <Loading></Loading>
@@ -54,11 +71,12 @@ const PetProducts = () => {
                 </div>
                 <div>
                     <fieldset className="fieldset">
-  <select defaultValue="Pick a browser" className="select">
-    <option disabled={true}>Pick a browser</option>
-    <option>Chrome</option>
-    <option>FireFox</option>
-    <option>Safari</option>
+  <select  onChange={handleFilter} value={category} className="select">
+    <option value='All'>All Categories</option>
+    <option value='Pets'>Pets</option>
+    <option value='Pet Food'>Food</option>
+    <option value='Pet Care Product'>Pet Care Product</option>
+    <option value='Accessories'>Accessories</option>
   </select>
   
 </fieldset>
