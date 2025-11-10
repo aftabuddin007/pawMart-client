@@ -9,6 +9,8 @@ import PetProducts from "../Components/PetProducts/PetProducts";
 import AddListPet from "../Pages/AddListPet/AddListPet";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
+import MyListing from "../Pages/MyListing/MyListing";
+import MyOrders from "../Pages/MyOrders/MyOrders";
 
 
 const router = createBrowserRouter([
@@ -31,6 +33,9 @@ const router = createBrowserRouter([
     path:'/add-list',
     element:<AddListPet></AddListPet>
   },{
+    path:'/my-list',
+    element:<MyListing></MyListing>
+  },{
     path:'/product-details/:id',
     element:<ProductDetails></ProductDetails>,
     loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`)
@@ -38,6 +43,10 @@ const router = createBrowserRouter([
     path:'/update-product/:id',
     element:<UpdateProduct></UpdateProduct>,
      loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`)
+  },{
+    path:'/my-order',
+    element:<MyOrders></MyOrders>,
+    
   }
     ]
   },{
