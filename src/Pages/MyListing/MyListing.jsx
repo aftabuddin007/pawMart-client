@@ -67,6 +67,8 @@ const MyListing = () => {
     
     return (
         <div className="overflow-x-auto bg-white rounded-2xl shadow-lg p-4 max-w-7xl mx-auto">
+                    <title>PawMart - My List</title>
+
       <table className="min-w-full text-sm text-left">
         <thead className="bg-gray-100 text-gray-700 uppercase text-xs">
           <tr>
@@ -108,7 +110,7 @@ const MyListing = () => {
               </td>
 
               <div className="py-3 px-4 flex items-center gap-2 justify-center">
-<Link to={`/update-products/${item._id}`}
+<Link to={`/update-product/${item._id}`}
   className="border border-blue-400 text-blue-500 hover:bg-blue-500
    hover:text-white px-3 py-1 rounded-md text-xs transition">
    Edit </Link>

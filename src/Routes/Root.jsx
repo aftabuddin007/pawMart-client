@@ -12,6 +12,7 @@ import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 import MyListing from "../Pages/MyListing/MyListing";
 import MyOrders from "../Pages/MyOrders/MyOrders";
 import NewUpdatePro from "../Components/NewUpdatePro/NewUpdatePro";
+import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -32,29 +33,41 @@ const router = createBrowserRouter([
     
   },{
     path:'/add-list',
-    element:<AddListPet></AddListPet>
+    element:<PrivateRoute>
+      <AddListPet></AddListPet>
+    </PrivateRoute>
   },{
     path:'/my-list',
-    element:<MyListing></MyListing>
+    element:<PrivateRoute> 
+      <MyListing></MyListing>
+    </PrivateRoute>
   },{
     path:'/product-details/:id',
-    element:<ProductDetails></ProductDetails>,
+    element:(<PrivateRoute>
+      <ProductDetails></ProductDetails>
+    </PrivateRoute>),
     loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`)
   },{
     path:'/update-product/:id',
-    element:<UpdateProduct></UpdateProduct>,
+    element:(<PrivateRoute>
+      <NewUpdatePro></NewUpdatePro>
+    </PrivateRoute>),
      loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`)
   }
   ,{
     path:'/update-products/:id',
-    element:<NewUpdatePro></NewUpdatePro>,
+    element:(<PrivateRoute>
+      <UpdateProduct></UpdateProduct>
+    </PrivateRoute>),
      loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`)
   }
   
   
   ,{
     path:'/my-order',
-    element:<MyOrders></MyOrders>,
+    element:<PrivateRoute>
+      <MyOrders></MyOrders>
+    </PrivateRoute>,
     
   }
     ]

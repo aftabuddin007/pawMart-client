@@ -79,9 +79,12 @@ console.log(err.code)
 
     return (
         <div>
+                    <title>PawMart - Sign Up</title>
+
              <div>
            <div>
                 <form onSubmit={handleSignup} className='items-center justify-center flex bg-[#516E91] min-h-screen'>
+
                            <div className="card  w-full max-w-sm shrink-0 shadow-2xl">
                  <div className="card-body">
                    <h1 className="text-3xl font-bold text-center">SignUp your account</h1>

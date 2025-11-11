@@ -21,6 +21,8 @@ const MyOrders = () => {
     return (
         <div>
              <div className="overflow-x-auto">
+                        <title>PawMart - My Order</title>
+
             <table className="min-w-full border border-gray-200 rounded-lg">
               <thead className="bg-gray-100">
                 <tr>

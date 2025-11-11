@@ -1,9 +1,11 @@
 import React, { use } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Providers/AuthProvider';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 
 const NewUpdatePro = () => {
+  const navigate = useNavigate()
+
 const {user} = use(AuthContext);
 const data = useLoaderData();
 const item =data.result
@@ -34,6 +36,7 @@ fetch(`http://localhost:3000/pet_product/${item._id}`,{
 .then(data=>{
     console.log(data)
     toast.success("Product update Successful.")
+    navigate('/my-list')
 })
 .catch(err=>{
     console.log(err)
@@ -45,7 +48,10 @@ fetch(`http://localhost:3000/pet_product/${item._id}`,{
 }  
 
     return (
-        <div>
+        <div className='max-w-7xl mx-auto'>
+                    <title>PawMart - Product Update Page</title>
+
+          <h2 className='text-3xl font-bold text-center mask-y-to-10%'>Modify Your Product</h2>
             <div className='bg-white rounded-2xl shadow-xl p-6 sm:p-8 w-full max-w-lg mx-auto'>
             {/* Update Form */}
     <form onSubmit={handleSubmit}  className="space-y-3">

@@ -13,6 +13,7 @@ const Error = () => {
 
     return (
         <div>
+          <title>Error - 404</title>
              <div>
           <div className="card bg-base-100  shadow-sm">
   <figure className="px-10 pt-10">

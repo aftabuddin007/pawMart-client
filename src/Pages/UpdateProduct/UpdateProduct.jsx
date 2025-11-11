@@ -1,9 +1,10 @@
 import React, { use } from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { toast } from 'react-toastify';
 
 const UpdateProduct = () => {
+  const nevigate = useNavigate()
     const {user} = use(AuthContext)
     console.log(user)
     const data = useLoaderData()
@@ -38,26 +39,22 @@ additionalNotes: form.notes.value
 .then(data=>{
     console.log(data)
     toast.success('Product Added successfully')
+    nevigate('/')
+
 })
 .catch(err=>{
     console.log(err)
 })
 
-
-
-
-
-
     }
-
-
-
 
 
     return (
         <div>
+                    <title>PawMart - Create Order</title>
+
               <div className="bg-white rounded-2xl shadow-lg p-6 w-full max-w-lg mx-auto">
-      <h2 className="text-xl font-semibold text-gray-800 text-center mb-5">
+      <h2 className="text-2xl font-semibold text-gray-800 text-center mb-5">
         Place Your Order
       </h2>
 
@@ -148,10 +145,11 @@ additionalNotes: form.notes.value
 
         {/* Date (Pick Up) */}
         <div>
-          <label className="block text-gray-600 mb-1">Date (Pick Up)</label>
+          <label className="block text-gray-600 mb-1">Date (Please Pick a date) </label>
           <input
             type="date"
             name="date"
+            // defaultValue={date}
             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring focus:ring-blue-200 focus:outline-none"
           />
         </div>

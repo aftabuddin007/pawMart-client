@@ -15,6 +15,8 @@ const recentPawPromise = useLoaderData()
 
     return (
         <div>
+                      <title>PawMart -Home</title>
+
             <HeroBanner></HeroBanner>
             <PetCategory></PetCategory>
             <PetRecentList recentPawPromise={recentPawPromise}></PetRecentList>

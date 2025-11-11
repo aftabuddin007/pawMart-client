@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router';
 
 const ProductDetails = () => {
+  
     const data = useLoaderData();
     const details = data.result;
     // console.log(details)
@@ -9,6 +10,8 @@ const ProductDetails = () => {
 
     return (
         <div>
+                    <title>PawMart - {name}</title>
+
             <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden mt-10 flex flex-col md:flex-row mb-20">
       {/* Left Side - Single Product Image */}
       <div className="md:w-1/2 bg-[#4e342e] flex justify-center items-center py-10">
@@ -47,7 +50,7 @@ const ProductDetails = () => {
           
         </div>
 
-        <Link to={`/update-product/${_id}`} className="w-full bg-black text-white btn rounded-lg hover:bg-gray-800 transition duration-300">
+        <Link to={`/update-products/${_id}`} className="w-full bg-black text-white btn rounded-lg hover:bg-gray-800 transition duration-300">
           Order Now
         </Link>
 

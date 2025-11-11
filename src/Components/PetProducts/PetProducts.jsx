@@ -32,7 +32,7 @@ const PetProducts = () => {
         fetch(url)
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            // console.log(data)
             setProducts(data)
             setLoading(false)
         })
@@ -42,6 +42,8 @@ const PetProducts = () => {
     }
     return (
         <div className='max-w-7xl mx-auto '>
+                    <title>PawMart - Pet & Supplies</title>
+
 <h2 className='text-3xl font-bold text-center my-20'>Pet/Supplies</h2>
 
             <div className='flex justify-between gap-4 my-10 items-center'>

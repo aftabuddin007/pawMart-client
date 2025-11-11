@@ -1,9 +1,10 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { toast } from 'react-toastify';
+import Loading from '../Loading/Loading';
 
 const AddListPet = () => {
-const {user} = use(AuthContext)
+const {user,loading} = use(AuthContext)
 const handleSubmit=(e)=>{
 e.preventDefault();
     const form  = e.target;
@@ -40,7 +41,9 @@ fetch('http://localhost:3000/pet_product',{
 
 }
 
-
+if(loading){
+  return <Loading></Loading>
+}
 
 
 
@@ -50,6 +53,8 @@ fetch('http://localhost:3000/pet_product',{
 
     return (
         <div>
+                    <title>PawMart - Add List </title>
+
            <h2>Add Your Product</h2>
            <div>
             <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-2xl p-8 mt-10">

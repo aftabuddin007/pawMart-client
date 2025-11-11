@@ -44,6 +44,8 @@ const {signInEmail,googleSignIn} = use(AuthContext)
     return (
         <div>
              <div className='items-center justify-center flex   min-h-screen bg-[#516E91]'>
+                        <title>PawMart - Login</title>
+
                 <div className="card  w-full max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
         <h1 className="text-3xl font-bold text-center">Login Your Account</h1>
