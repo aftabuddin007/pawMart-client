@@ -1,10 +1,32 @@
-import React from 'react';
-import { Link, useLoaderData } from 'react-router';
+import React, { use, useEffect, useState } from 'react';
+import { Link,  useParams } from 'react-router';
+import Loading from '../Loading/Loading';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const ProductDetails = () => {
-  
-    const data = useLoaderData();
-    const details = data.result;
+  const {id} =useParams()
+const [details,setDetails]=useState({})
+const [loading,setLoading]=useState(true)
+const {user} = use(AuthContext)
+// console.log(user)
+  useEffect(()=>{
+    fetch(`http://localhost:3000/pet_product/${id}`,{
+      headers:{
+        authorization:`Bearer ${user.accessToken}`
+
+      }
+    })
+.then(res=>res.json())
+.then(data=>{
+  setDetails(data.result)
+  setLoading(false)
+})
+  },[])
+  if(loading){
+    return <Loading></Loading>
+  }
+    // const data = useLoaderData();
+    // const details = data.result;
     // console.log(details)
         const {name,category,price,location,image,_id,description,email} = details;
 
@@ -12,8 +34,8 @@ const ProductDetails = () => {
         <div>
                     <title>PawMart - {name}</title>
 
-            <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden mt-10 flex flex-col md:flex-row mb-20">
-      {/* Left Side - Single Product Image */}
+         <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden mt-10 flex flex-col md:flex-row mb-20">
+      
       <div className="md:w-1/2 bg-[#4e342e] flex justify-center items-center py-10">
         <img
           src={image}
@@ -22,7 +44,7 @@ const ProductDetails = () => {
         />
       </div>
 
-      {/* Right Side - Product Details */}
+      
       <div className="md:w-1/2 p-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-2">
           Name: {name}

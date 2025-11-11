@@ -1,10 +1,11 @@
 import React, { use, useState } from 'react';
 import { FaEyeSlash, FaRegEye } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Login = () => {
+  const location  = useLocation()
     const navigate = useNavigate()
 const [show,setShow]=useState(false)
 const {signInEmail,googleSignIn} = use(AuthContext)
@@ -19,7 +20,8 @@ const {signInEmail,googleSignIn} = use(AuthContext)
             const user = res.user
             console.log(user)
             toast.success('LogIn Successfully.')
-            navigate('/')
+            navigate(location.state || '/')
+            form.reset()
         })
         .catch(err=>{
         toast.error('Some thing went wrong.Please try again.')
@@ -30,7 +32,7 @@ const {signInEmail,googleSignIn} = use(AuthContext)
         googleSignIn()
          .then(res=>{
         const user = res.user
-        console.log(user)
+        // console.log(user)
         toast.success('Login Successful')
         navigate(`${location.state ? location.state : '/'}`)
       })
