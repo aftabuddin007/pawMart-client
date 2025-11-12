@@ -68,11 +68,11 @@ if(loading){
         <div>
                     <title>PawMart - Add List </title>
 
-           <h2>Add Your Product</h2>
+           
            <div>
             <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-2xl p-8 mt-10">
-      <h2 className="text-2xl font-semibold text-center mb-6 text-gray-700">
-        Add Product / Pet
+      <h2 className="text-3xl font-bold text-center mb-6 ">
+        List Your Product
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-5">

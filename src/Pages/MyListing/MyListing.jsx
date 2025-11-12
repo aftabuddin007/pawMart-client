@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Link } from 'react-router';
 import Swal from 'sweetalert2';
+import Loading from '../Loading/Loading';
 
 const MyListing = () => {
 
@@ -10,7 +11,12 @@ const MyListing = () => {
         const [loading,setLoading] = useState(true)
   
         useEffect(()=>{
-          fetch(`http://localhost:3000/pet_products?email=${user?.email}`)
+          fetch(`http://localhost:3000/pet_products?email=${user?.email}`,{
+            headers:{
+        authorization:`Bearer ${user.accessToken}`
+
+      }
+          })
           .then(res=>res.json())
           .then(data=>{
             // console.log(data)
@@ -21,7 +27,7 @@ const MyListing = () => {
 
 
         if(loading){
-           return <p>loading....</p>  
+           return <Loading></Loading> 
         }
  const handleDelete = (id) =>{
  Swal.fire({

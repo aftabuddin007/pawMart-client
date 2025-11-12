@@ -1,5 +1,6 @@
 import React, { use,  useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Loading from '../Loading/Loading';
 
 const MyOrders = () => {
     const {user} = use(AuthContext)
@@ -7,16 +8,21 @@ const MyOrders = () => {
     const [orders,setOrders] = useState([])
     const [loading,setLoading] = useState(true)
     useEffect(()=>{
-      fetch(`http://localhost:3000/orders?email=${user?.email}`)
+      fetch(`http://localhost:3000/orders?email=${user?.email}`,{
+        headers:{
+        authorization:`Bearer ${user.accessToken}`
+
+      }
+      })
       .then(res=>res.json())
       .then(data=>{
-        console.log(data)
+        // console.log(data)
         setOrders(data)
         setLoading(false)
       })
     },[user])
     if(loading){
-       return <p>loading....</p> 
+       return <Loading></Loading>
     }
     return (
         <div>

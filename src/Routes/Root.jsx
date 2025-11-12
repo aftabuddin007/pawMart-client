@@ -14,6 +14,7 @@ import MyOrders from "../Pages/MyOrders/MyOrders";
 import NewUpdatePro from "../Components/NewUpdatePro/NewUpdatePro";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import CategoryByProduct from "../Pages/CategoryByProduct/CategoryByProduct";
+import Loading from "../Pages/Loading/Loading";
 
 
 const router = createBrowserRouter([
@@ -24,13 +25,16 @@ const router = createBrowserRouter([
        {
     path:'/',
     element:<HomePage></HomePage>,
-    loader:()=>fetch('http://localhost:3000/recent-product')
+    loader:()=>fetch('http://localhost:3000/recent-product'),
+    hydrateFallbackElement:<Loading></Loading>
     
   },
        {
     path:'/pets-supplies',
     element:<PetProducts></PetProducts>,
     loader:() => fetch('http://localhost:3000/pet_product'),
+        hydrateFallbackElement:<Loading></Loading>
+
     
   },{
     path:'/add-list',
@@ -47,20 +51,23 @@ const router = createBrowserRouter([
     element:(<PrivateRoute>
       <ProductDetails></ProductDetails>
     </PrivateRoute>),
-    // loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`)
   },{
     path:'/update-product/:id',
     element:(<PrivateRoute>
       <NewUpdatePro></NewUpdatePro>
     </PrivateRoute>),
-     loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`)
+     loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`),
+         hydrateFallbackElement:<Loading></Loading>
+
   }
   ,{
     path:'/update-products/:id',
     element:(<PrivateRoute>
       <UpdateProduct></UpdateProduct>
     </PrivateRoute>),
-     loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`)
+     loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`),
+         hydrateFallbackElement:<Loading></Loading>
+
   }
   
   
