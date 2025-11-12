@@ -1,10 +1,13 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { toast } from 'react-toastify';
 import Loading from '../Loading/Loading';
 
 const AddListPet = () => {
 const {user,loading} = use(AuthContext)
+const [category,setCategory] = useState('')
+const [price,setPrice] = useState('')
+
 const handleSubmit=(e)=>{
 e.preventDefault();
     const form  = e.target;
@@ -31,15 +34,25 @@ fetch('http://localhost:3000/pet_product',{
 .then(data=>{
     console.log(data)
     toast.success("Product Listing Successful.")
+    form.reset()
 })
 .catch(err=>{
     console.log(err)
 })
 
-
-
-
 }
+const handleChangeCategory = (e)=>{
+  const select = e.target.value;
+  setCategory(select)
+  if(select === 'Pets'){
+    setPrice(0);
+  }else{
+    setPrice('');
+  }
+}
+
+
+
 
 if(loading){
   return <Loading></Loading>
@@ -79,6 +92,8 @@ if(loading){
           <label className="block text-gray-600 mb-1">Category</label>
           <select
             name="category"
+            value={category}
+            onChange={handleChangeCategory}
             className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200 focus:outline-none"
           >
             <option value="">Select Category</option>
@@ -95,8 +110,12 @@ if(loading){
           <input
             type="number"
             name="price"
+            value={price}
+            onChange={(e)=>setPrice(e.target.value)}
             placeholder="Enter price or 0 for pets"
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200 focus:outline-none"
+            className={`w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200 focus:outline-none
+              ${category === 'Pets'?'bg-gray-100':''}`}
+              readOnly={category === 'Pets'}
           />
         </div>
 
