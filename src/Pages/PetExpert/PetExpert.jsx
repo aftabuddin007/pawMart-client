@@ -31,8 +31,8 @@ const experts =
 const PetExpert = () => {
     return (
         <div>
-            <section className="py-12 px-6 bg-gradient-to-b from-[#fff7ed] to-[#ffedd5]">
-  <h2 className="text-3xl font-bold text-center text-orange-600 mb-10">
+            <section className="py-12 px-6 ">
+  <h2 className="text-3xl font-bold text-center  mb-10">
     Meet Our Pet Care Experts
   </h2>
 
