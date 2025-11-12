@@ -74,6 +74,7 @@ const MyListing = () => {
     return (
         <div className="overflow-x-auto bg-white rounded-2xl shadow-lg p-4 max-w-7xl mx-auto">
                     <title>PawMart - My List</title>
+<h2 className='text-3xl font-bold text-center mb-10'>My Listing</h2>
 
       <table className="min-w-full text-sm text-left">
         <thead className="bg-gray-100 text-gray-700 uppercase text-xs">

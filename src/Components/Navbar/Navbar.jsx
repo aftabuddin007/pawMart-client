@@ -36,7 +36,7 @@ const handleTheme = (checked)=>{
 
 
     return (
-        <div className=' bg-gradient-to-r from-[#009fff] to-[#ec2f4b] '>
+        <div className='bg-base-200  '>
             <div className="navbar max-w-7xl mx-auto ">
   <div className="navbar-start">
     <div className="dropdown z-50">
@@ -62,7 +62,7 @@ const handleTheme = (checked)=>{
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 text-xl ">
       <li><NavLink to='/'className={navLinkClass}> Home</NavLink></li>
       <li><NavLink to='/pets-supplies' className={navLinkClass}> Pets/Supplies</NavLink></li>
       {user &&<> 

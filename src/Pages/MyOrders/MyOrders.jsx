@@ -1,6 +1,10 @@
 import React, { use,  useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import Loading from '../Loading/Loading';
+import jsPDF from 'jspdf';
+// import 'jspdf-autotable';
+import  'jspdf-autotable'
+import autoTable from 'jspdf-autotable';
 
 const MyOrders = () => {
     const {user} = use(AuthContext)
@@ -24,11 +28,48 @@ const MyOrders = () => {
     if(loading){
        return <Loading></Loading>
     }
+    const downloadPdf = ()=>{
+      const doc = new jsPDF()
+      doc.text('My Orders - pawMart',14,15)
+      const tableColumn=[
+        'Product/Listing Name',
+        	'Buyer Name',
+          'Price',
+          	'Quantity',
+            	'Address',
+              	'Date',
+                '	Phone',
+      ];
+const tableRow = orders.map((order)=>[
+  order.productName,
+  order.buyerName,
+  `$${order.price}`,
+  order.quantity,
+  order.address,
+  order.date,
+  order.phone,
+]);     
+autoTable(doc,{
+  head:[tableColumn],
+  body:tableRow,
+  startY: 25,
+  styles: { fontSize: 10, cellPadding: 3 },
+  headStyles: { fillColor: [52, 73, 94] },
+
+});
+doc.save('MyOrders.pdf');
+
+// console.log('e')
+
+
+
+
+    }
     return (
-        <div>
+        <div className='max-w-7xl mx-auto my-10'>
              <div className="overflow-x-auto">
                         <title>PawMart - My Order</title>
-
+<h2 className='text-3xl font-bold text-center mb-10'>My Orders</h2>
             <table className="min-w-full border border-gray-200 rounded-lg">
               <thead className="bg-gray-100">
                 <tr>
@@ -74,6 +115,10 @@ const MyOrders = () => {
               </tbody>
             </table>
         </div>
+<div className='text-center my-8'>
+          <button onClick={downloadPdf} className='btn btn-primary '>Download to Pdf</button>
+
+</div>
         </div>
     );
 };

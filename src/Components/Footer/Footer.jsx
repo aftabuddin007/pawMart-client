@@ -1,38 +1,45 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Footer = () => {
     return (
         <div>
-            <footer className="footer sm:footer-horizontal bg-indigo-500 text-base-content p-10">
+            <footer className="footer sm:footer-horizontal bg-amber-950 text-white  p-10">
   <aside>
     <img src="https://img.icons8.com/stickers/100/cat-footprint.png" alt="" className='h-25 w-25'/>
     <p>
-      Paw Mart is a one-stop pet care store <br /> offering high-quality pet food, <br />
-      accessories, grooming products,<br /> and toys for all kinds of pets. 
+      Paw Mart is a one-stop pet care store.
       </p>
   </aside>
   <nav>
-    <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
+    <h6 className="footer-title">Quick Link</h6>
+    <Link to='/' className="link link-hover">Home</Link>
+    <Link to='/pets-supplies' className="link link-hover">Pet/Supplies</Link>
+    <Link to ='/auth/login' className="link link-hover">Login</Link>
+    <Link to='/auth/signup' className="link link-hover">RSignup</Link>
   </nav>
   <nav>
     <h6 className="footer-title">Company</h6>
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <Link className="link link-hover">About us</Link>
+    <Link className="link link-hover">Policy</Link>
+    <Link className="link link-hover">Terms Of Service</Link>
   </nav>
   <nav>
-    <h6 className="footer-title">Legal</h6>
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
+    <h6 className="footer-title">Contract Us</h6>
+    <Link className=""><span className='font-bold'>Address:</span><br /> Mirpur, Dhaka</Link>
+    <Link className=""><span className='font-bold'>Phone:</span><br /> +880 1723456233</Link>
+    <Link className=""><span className='font-bold'>Email:</span><br />PawMart@gmail.com</Link>
+    <Link className=""><span className='font-bold'>Social:</span><br />
+    <div className='flex gap-2 items-center mt-2 '>
+      <Link to='https://www.facebook.com/aftab.ahme.2025'><img src="https://img.icons8.com/material-rounded/24/facebook-new.png" alt="" /></Link>
+      <Link to='https://www.pinterest.com/aftabhasan7856/'><img src="https://img.icons8.com/material-rounded/24/pinterest--v1.png" alt="" /></Link>
+      <Link to='https://www.instagram.com/a_f_t_a_b_5_3?igsh=amdsZWswZXkycWg3'><img src="https://img.icons8.com/material-outlined/24/instagram-new--v1.png" alt="" /></Link>
+    </div>
+    </Link>
+    
   </nav>
 </footer>
-<footer className="footer sm:footer-horizontal footer-center bg-indigo-500  text-base-content p-4">
+<footer className="footer sm:footer-horizontal footer-center bg-amber-950  text-white p-4">
   <aside>
     <p>Copyright © {new Date().getFullYear()} - All right reserved by PawMart</p>
   </aside>
