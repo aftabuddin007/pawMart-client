@@ -76,7 +76,7 @@ const PetProducts = () => {
   <select  onChange={handleFilter} value={category} className="select">
     <option value='All'>All Categories</option>
     <option value='Pets'>Pets</option>
-    <option value='Pet Food'>Food</option>
+    <option value='Pet Food'>Pet Food</option>
     <option value='Pet Care Product'>Pet Care Product</option>
     <option value='Accessories'>Accessories</option>
   </select>

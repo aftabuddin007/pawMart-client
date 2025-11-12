@@ -13,6 +13,7 @@ import MyListing from "../Pages/MyListing/MyListing";
 import MyOrders from "../Pages/MyOrders/MyOrders";
 import NewUpdatePro from "../Components/NewUpdatePro/NewUpdatePro";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
+import CategoryByProduct from "../Pages/CategoryByProduct/CategoryByProduct";
 
 
 const router = createBrowserRouter([
@@ -69,6 +70,9 @@ const router = createBrowserRouter([
       <MyOrders></MyOrders>
     </PrivateRoute>,
     
+  },{
+    path:'/category/:name',
+    element:<CategoryByProduct></CategoryByProduct>
   }
     ]
   },{
