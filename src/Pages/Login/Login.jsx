@@ -45,13 +45,21 @@ const {signInEmail,googleSignIn} = use(AuthContext)
 
     return (
         <div>
-             <div className='items-center justify-center flex   min-h-screen bg-[#516E91]'>
+             <div className='items-center justify-center flex   min-h-screen  bg-gradient-to-t from-[#cfd9df] to-[#e2ebf0] h-screen w-full'>
                         <title>PawMart - Login</title>
 
                 <div className="card  w-full max-w-sm shrink-0 shadow-2xl">
-      <div className="card-body">
+      <div className="card-body bg-gradient-to-t from-[#30cfd0] to-[#330867]">
+        <div  className='mb-3 gap-2 flex justify-center'> 
+                          
+                              <p className="flex justify-center  text-xl font-bold "><img src="https://i.ibb.co.com/5gShN8km/images-1-removebg-preview.png" alt="" className='h-10 w-10' /> 
+                              <h1 class="text-2xl font-extrabold text-purple-500 font-[Comic_Sans_MS] tracking-wide">
+                            <span class="italic">Paw</span><span class="not-italic">Mart</span>
+                          </h1>
+                              </p>
+                              </div>
         <h1 className="text-3xl font-bold text-center">Login Your Account</h1>
-        <form  onSubmit={handleLogin}>
+        <form  onSubmit={handleLogin} className=''>
           <fieldset className="fieldset">
           {/* email */}
           <label className="label">Email</label>
@@ -59,11 +67,11 @@ const {signInEmail,googleSignIn} = use(AuthContext)
           type="email" 
         //   ref={emailRef}
            
-           className="input" placeholder="Email" required />
+           className="input w-full" placeholder="Email" required />
           {/* password */}
           <div className='relative'>
             <label className="label">Password</label>
-          <input name='password' type={show ? 'text':'password'} className="input" placeholder="Password" required />
+          <input name='password' type={show ? 'text':'password'} className="input w-full" placeholder="Password" required />
           <span onClick={()=>setShow(!show)} className='absolute right-7 top-8 cursor-pointer z-50'>{show ? <FaRegEye />:<FaEyeSlash />}</span>
           </div>
           {
@@ -74,7 +82,7 @@ const {signInEmail,googleSignIn} = use(AuthContext)
             // onClick={handleForgetPassword} 
             className=" text-left  link link-hover">Forgot password?</button>
             
-          <button type='submit' className="btn btn-success mt-4 text-white">Login</button>
+          <button type='submit' className="btn btn-primary mt-4 ">Login</button>
           <p className='text-center font-bold text-md'>Or</p>
           <div className='text-center  '>
             {/* Google */}

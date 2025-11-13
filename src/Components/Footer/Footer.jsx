@@ -4,11 +4,18 @@ import { Link } from 'react-router';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer sm:footer-horizontal bg-amber-950 text-white  p-10">
+            <footer className="footer sm:footer-horizontal bg-gray-800 text-white  p-10">
   <aside>
-    <img src="https://img.icons8.com/stickers/100/cat-footprint.png" alt="" className='h-25 w-25'/>
-    <p>
-      Paw Mart is a one-stop pet care store.
+<Link to ='/' className='flex gap-2'> 
+
+    <a className="btn btn-ghost text-xl font-bold "><img src="https://i.ibb.co.com/5gShN8km/images-1-removebg-preview.png" alt="" className='h-10 w-10' /> 
+    <h1 class="text-2xl font-extrabold text-purple-500 font-[Comic_Sans_MS] tracking-wide">
+  <span class="italic">Paw</span><span class="not-italic">Mart</span>
+</h1>
+    </a>
+    </Link>    <p>
+      PawMart connects local pet owners and <br /> buyers for adoption and pet
+care products.
       </p>
   </aside>
   <nav>
@@ -31,15 +38,15 @@ const Footer = () => {
     <Link className=""><span className='font-bold'>Email:</span><br />PawMart@gmail.com</Link>
     <Link className=""><span className='font-bold'>Social:</span><br />
     <div className='flex gap-2 items-center mt-2 '>
-      <Link to='https://www.facebook.com/aftab.ahme.2025'><img src="https://img.icons8.com/material-rounded/24/facebook-new.png" alt="" /></Link>
-      <Link to='https://www.pinterest.com/aftabhasan7856/'><img src="https://img.icons8.com/material-rounded/24/pinterest--v1.png" alt="" /></Link>
-      <Link to='https://www.instagram.com/a_f_t_a_b_5_3?igsh=amdsZWswZXkycWg3'><img src="https://img.icons8.com/material-outlined/24/instagram-new--v1.png" alt="" /></Link>
+      <Link className='bg-white' to='https://www.facebook.com/aftab.ahme.2025'><img src="https://img.icons8.com/material-rounded/24/facebook-new.png" alt="" /></Link>
+      <Link className='bg-white' to='https://www.pinterest.com/aftabhasan7856/'><img src="https://img.icons8.com/material-rounded/24/pinterest--v1.png" alt="" /></Link>
+      <Link className='bg-white' to='https://www.instagram.com/a_f_t_a_b_5_3?igsh=amdsZWswZXkycWg3'><img src="https://img.icons8.com/material-outlined/24/instagram-new--v1.png" alt="" /></Link>
     </div>
     </Link>
     
   </nav>
 </footer>
-<footer className="footer sm:footer-horizontal footer-center bg-amber-950  text-white p-4">
+<footer className="footer sm:footer-horizontal footer-center bg-gray-800  text-white p-4">
   <aside>
     <p>Copyright © {new Date().getFullYear()} - All right reserved by PawMart</p>
   </aside>

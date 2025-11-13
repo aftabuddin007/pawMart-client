@@ -49,30 +49,21 @@ const {user} = use(AuthContext)
         <h2 className="text-2xl font-semibold text-gray-800 mb-2">
           Name: {name}
         </h2>
-        <p >Category: {category}</p>
-        <p>Email: {email}</p>
-        <p className="text-green-600 font-medium mb-2">★ 4.4 | 421 Reviews</p>
+        <p className='text-gray-600'><span className='text-xl font-semibold'>Category:</span> {category}</p>
+        <p className='text-gray-600'><span className='text-xl font-semibold'>Email:</span> {email}</p>
+        <p className="text-yellow-600 font-medium mb-2"><span className='text-xl'>Rating:</span> ★ 4.4 | 421 Reviews</p>
 
         <p className="text-gray-600 mb-4 leading-relaxed">
-         {description}
+         <span className='text-xl font-semibold'>Description:</span> {description}
         </p>
 
         <p className="text-gray-700 mb-4">
-          Location: {location}
+          <span className='text-xl font-semibold'>Location:</span> {location}
         </p>
 
-        <p>Price: {price}</p>
+        <p className='text-gray-600'><span className='text-xl font-semibold'>Price:</span> {price}</p>
 
-     
-
-        
-
-        <div className="flex flex-wrap items-center gap-4 mb-6">
-          
-          
-        </div>
-
-        <Link to={`/update-products/${_id}`} className="w-full bg-black text-white btn rounded-lg hover:bg-gray-800 transition duration-300">
+        <Link to={`/update-products/${_id}`} className="w-full btn-primary text-white btn rounded-lg transition duration-300">
           Order Now
         </Link>
 

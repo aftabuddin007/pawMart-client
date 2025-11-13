@@ -2,11 +2,14 @@ import React, { use, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { toast } from 'react-toastify';
 import Loading from '../Loading/Loading';
+import { useNavigate } from 'react-router';
 
 const AddListPet = () => {
+  const navigate = useNavigate()
 const {user,loading} = use(AuthContext)
 const [category,setCategory] = useState('')
 const [price,setPrice] = useState('')
+
 
 const handleSubmit=(e)=>{
 e.preventDefault();
@@ -35,9 +38,11 @@ fetch('http://localhost:3000/pet_product',{
     console.log(data)
     toast.success("Product Listing Successful.")
     form.reset()
+    navigate('/pets-supplies')
+
 })
 .catch(err=>{
-    console.log(err)
+    toast.error(err)
 })
 
 }
@@ -70,10 +75,11 @@ if(loading){
 
            
            <div>
-            <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-2xl p-8 mt-10">
-      <h2 className="text-3xl font-bold text-center mb-6 ">
+            <h2 className="text-3xl font-bold text-center mb-6 ">
         List Your Product
       </h2>
+            <div className="max-w-2xl mx-auto  shadow-lg rounded-2xl p-8 mt-10">
+      
 
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Product / Pet Name */}
@@ -170,7 +176,7 @@ if(loading){
             name="email"
             readOnly
             defaultValue={user?.email}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 bg-gray-100 text-gray-500"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2  text-gray-500"
           />
         </div>
 

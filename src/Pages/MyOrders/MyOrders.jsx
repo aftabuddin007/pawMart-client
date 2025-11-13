@@ -71,7 +71,7 @@ doc.save('MyOrders.pdf');
                         <title>PawMart - My Order</title>
 <h2 className='text-3xl font-bold text-center mb-10'>My Orders</h2>
             <table className="min-w-full border border-gray-200 rounded-lg">
-              <thead className="bg-gray-100">
+              <thead className="">
                 <tr>
                   <th className="px-4 py-2 border">Product/Listing Name</th>
                   <th className="px-4 py-2 border">Buyer Name</th>
@@ -87,7 +87,7 @@ doc.save('MyOrders.pdf');
                  
                   <tr
                     key={index}
-                    className="hover:bg-gray-50 transition-colors duration-200"
+                    className=" transition-colors duration-200"
                   >
                     <td className="px-4 py-2 border text-center">
                       {order.productName}

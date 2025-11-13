@@ -48,6 +48,10 @@ const handleTheme = (checked)=>{
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <li><NavLink to='/'className={navLinkClass}> Home</NavLink></li>
       <li><NavLink to='/pets-supplies' className={navLinkClass}> Pets/Supplies</NavLink></li>
+      <li className='lg:hidden  '> <input onChange={(e)=>handleTheme(e.target.checked)} 
+    defaultChecked={localStorage.getItem('theme') === "dark"}
+    type="checkbox" value="synthwave" className="toggle theme-controller text-black-200 " />
+</li>
       {user &&<> 
       <li><NavLink to='/add-list' className={navLinkClass}> Add Listing</NavLink></li>
       <li><NavLink to='/my-list' className={navLinkClass}> My Listings</NavLink></li>
@@ -56,10 +60,14 @@ const handleTheme = (checked)=>{
       </>}
       </ul>
     </div>
-    <div className='flex gap-2'> 
+    <Link to ='/' className='flex gap-2'> 
 
-    <a className="btn btn-ghost text-xl font-bold "><img src="https://img.icons8.com/stickers/100/cat-footprint.png" alt="" className='h-10 w-10' /> PawMart</a>
-    </div>
+    <a className="btn btn-ghost text-xl font-bold "><img src="https://i.ibb.co.com/5gShN8km/images-1-removebg-preview.png" alt="" className='h-10 w-10' /> 
+    <h1 class="text-[12px] sm:text-2xl font-extrabold text-purple-500 font-[Comic_Sans_MS] tracking-wide">
+  <span class="italic">Paw</span><span class="not-italic">Mart</span>
+</h1>
+    </a>
+    </Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-xl ">
@@ -76,11 +84,12 @@ const handleTheme = (checked)=>{
   </div>
   <div className="navbar-end ">
 {/* theme */}
+<div className='hidden lg:block'>
 <input onChange={(e)=>handleTheme(e.target.checked)} 
     defaultChecked={localStorage.getItem('theme') === "dark"}
-    type="checkbox" value="synthwave" className="toggle theme-controller" />
+    type="checkbox" value="synthwave" className="toggle theme-controller  " />
 
-
+</div>
 
 
 <div className="navbar-end flex ">

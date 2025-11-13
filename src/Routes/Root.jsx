@@ -57,7 +57,6 @@ const router = createBrowserRouter([
       <NewUpdatePro></NewUpdatePro>
     </PrivateRoute>),
      loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`),
-         hydrateFallbackElement:<Loading></Loading>
 
   }
   ,{
@@ -66,7 +65,7 @@ const router = createBrowserRouter([
       <UpdateProduct></UpdateProduct>
     </PrivateRoute>),
      loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`),
-         hydrateFallbackElement:<Loading></Loading>
+         
 
   }
   

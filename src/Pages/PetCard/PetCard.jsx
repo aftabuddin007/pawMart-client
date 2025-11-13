@@ -36,7 +36,7 @@ const PetCard = ({product}) => {
         <div className="mt-5">
           <Link
             to={`/product-details/${_id}`}
-            className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-5 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
+            className="btn btn-outline btn-info  font-semibold px-5 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
           >
             See Details →
           </Link>

@@ -72,12 +72,12 @@ const MyListing = () => {
  
     
     return (
-        <div className="overflow-x-auto bg-white rounded-2xl shadow-lg p-4 max-w-7xl mx-auto">
+        <div className="overflow-x-auto  rounded-2xl shadow-lg p-4 max-w-7xl mx-auto mb-20">
                     <title>PawMart - My List</title>
 <h2 className='text-3xl font-bold text-center mb-10'>My Listing</h2>
 
       <table className="min-w-full text-sm text-left">
-        <thead className="bg-gray-100 text-gray-700 uppercase text-xs">
+        <thead className="  uppercase text-xs">
           <tr>
             <th className="py-3 px-4">SL No</th>
             <th className="py-3 px-4">Image</th>
@@ -91,7 +91,7 @@ const MyListing = () => {
 
         <tbody>
           {orders.map((item, index) => (
-            <tr key={item._id} className="border-b hover:bg-gray-50 transition">
+            <tr key={item._id} className="border-b  transition">
               <td className="py-3 px-4">{index + 1}</td>
 
               <td className="py-3 px-4">

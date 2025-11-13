@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { useLoaderData, useNavigate } from 'react-router';
@@ -8,6 +8,11 @@ const NewUpdatePro = () => {
 
 const {user} = use(AuthContext);
 const data = useLoaderData();
+
+const [category,setCategory] = useState('')
+const [price,setPrice] = useState('')
+
+
 const item =data.result
 //  console.log(item)
 const handleSubmit=(e)=>{
@@ -35,7 +40,7 @@ fetch(`http://localhost:3000/pet_product/${item._id}`,{
 }).then(res=>res.json())
 .then(data=>{
     console.log(data)
-    toast.success("Product update Successful.")
+    toast.success("Product update Successfully.")
     navigate('/my-list')
 })
 .catch(err=>{
@@ -45,14 +50,24 @@ fetch(`http://localhost:3000/pet_product/${item._id}`,{
 
 
 
-}  
+} 
+const handleChangeCategory = (e)=>{
+  const select = e.target.value;
+  setCategory(select)
+  if(select === 'Pets'){
+    setPrice(0);
+  }else{
+    setPrice('');
+  }
+} 
 
     return (
         <div className='max-w-7xl mx-auto'>
                     <title>PawMart - Product Update Page</title>
 
-          <h2 className='text-3xl font-bold text-center mask-y-to-10%'>Modify Your Product</h2>
-            <div className='bg-white rounded-2xl shadow-xl p-6 sm:p-8 w-full max-w-lg mx-auto'>
+            <div className=' rounded-2xl shadow-xl p-6 sm:p-8 w-full max-w-lg mx-auto'>
+<h2 className='text-3xl font-bold text-center mb-10'>Modify Your Product</h2>
+
             {/* Update Form */}
     <form onSubmit={handleSubmit}  className="space-y-3">
       <div>
@@ -71,6 +86,8 @@ fetch(`http://localhost:3000/pet_product/${item._id}`,{
           <label className="block text-gray-600 mb-1">Category</label>
           <select
             name="category"
+            value={category}
+            onChange={handleChangeCategory}
             defaultValue={item.category}
             className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200 focus:outline-none"
           >
@@ -88,9 +105,13 @@ fetch(`http://localhost:3000/pet_product/${item._id}`,{
           <input
             type="number"
             name="price"
+            value={price}
             defaultValue={item.price}
+            onChange={(e)=>setPrice(e.target.value)}
             placeholder="Enter price or 0 for pets"
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200 focus:outline-none"
+            className={`w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring focus:ring-blue-200 focus:outline-none
+              ${category === 'Pets'?'bg-gray-100':''}`}
+              readOnly={category === 'Pets'}
           />
         </div>
 
@@ -149,7 +170,7 @@ fetch(`http://localhost:3000/pet_product/${item._id}`,{
             name="email"
             readOnly
             defaultValue={user?.email}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 bg-gray-100 text-gray-500"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2  text-gray-500"
           />
         </div>
 

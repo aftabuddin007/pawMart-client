@@ -38,7 +38,7 @@ additionalNotes: form.notes.value
 }).then(res=>res.json())
 .then(data=>{
     console.log(data)
-    toast.success('Product Added successfully')
+    toast.success('Your Order is Placed Successfully')
     nevigate('/')
 
 })
@@ -53,8 +53,8 @@ additionalNotes: form.notes.value
         <div>
                     <title>PawMart - Create Order</title>
 
-              <div className="bg-white rounded-2xl shadow-lg p-6 w-full max-w-lg mx-auto">
-      <h2 className="text-2xl font-semibold text-gray-800 text-center mb-5">
+              <div className=" rounded-2xl shadow-lg p-6 w-full max-w-lg mx-auto">
+      <h2 className="text-2xl font-semibold  text-center mb-5">
         Place Your Order
       </h2>
 
@@ -67,7 +67,7 @@ additionalNotes: form.notes.value
             name="buyerName"
             defaultValue={user?.displayName}
             readOnly
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-600"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2  text-gray-600"
           />
         </div>
 
@@ -79,7 +79,7 @@ additionalNotes: form.notes.value
             name="email"
             defaultValue={user.email}
             readOnly
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-600"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2  text-gray-600"
           />
         </div>
 
@@ -91,7 +91,7 @@ additionalNotes: form.notes.value
             name="productId"
             defaultValue={_id}
             readOnly
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-600"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2  text-gray-600"
           />
         </div>
 
@@ -103,7 +103,7 @@ additionalNotes: form.notes.value
             name="productName"
             defaultValue={name}
             readOnly
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-600"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2  text-gray-600"
           />
         </div>
 
@@ -116,7 +116,7 @@ additionalNotes: form.notes.value
             value="1"
             min="1"
             readOnly
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-600"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2  text-gray-600"
           />
         </div>
 
@@ -128,7 +128,7 @@ additionalNotes: form.notes.value
             name="price"
             defaultValue={price}
             readOnly
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 bg-gray-100 text-gray-600"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2  text-gray-600"
           />
         </div>
 

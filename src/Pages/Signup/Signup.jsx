@@ -83,28 +83,36 @@ console.log(err.code)
 
              <div>
            <div>
-                <form onSubmit={handleSignup} className='items-center justify-center flex bg-[#516E91] min-h-screen'>
+                <form onSubmit={handleSignup} className='items-center justify-center flex bg-gradient-to-t from-[#cfd9df] to-[#e2ebf0]min-h-screen'>
 
                            <div className="card  w-full max-w-sm shrink-0 shadow-2xl">
-                 <div className="card-body">
+                 <div className="card-body bg-gradient-to-t from-[#30cfd0] to-[#330867]">
+                   <div  className='mb-3 gap-2 flex justify-center'> 
+                          
+                              <p className="flex justify-center  text-xl font-bold "><img src="https://i.ibb.co.com/5gShN8km/images-1-removebg-preview.png" alt="" className='h-10 w-10' /> 
+                              <h1 class="text-2xl font-extrabold text-purple-500 font-[Comic_Sans_MS] tracking-wide">
+                            <span class="italic">Paw</span><span class="not-italic">Mart</span>
+                          </h1>
+                              </p>
+                              </div>
                    <h1 className="text-3xl font-bold text-center">SignUp your account</h1>
                    <fieldset className="fieldset">
                      <label className="label">Name</label>
-                     <input name='name' type="text" className="input" placeholder="Name" required />
+                     <input name='name' type="text" className="input w-full" placeholder="Name" required />
                      
                      <label className="label">Email</label>
-                     <input name='email' type="email" className="input" placeholder="Email" required/>
+                     <input name='email' type="email" className="input w-full" placeholder="Email" required/>
                      <label className="label">Photo URL</label>
-                     <input name='photo' type="text" className="input" placeholder="Photo URL" required />
+                     <input name='photo' type="text" className="input w-full" placeholder="Photo URL" required />
                      <div className='relative'>
                                  <label className="label">Password</label>
-                               <input name='password' type={show ? 'text':'password'} className="input" placeholder="Password" required/>
+                               <input name='password' type={show ? 'text':'password'} className="input w-full" placeholder="Password" required/>
                                <span onClick={()=>setShow(!show)} className='absolute right-7 top-8 cursor-pointer z-50'>{show ? <FaRegEye />:<FaEyeSlash />}</span>
                                </div>
                         {
                      passwordError && <p className='text-red-500 text-xs'>{passwordError}</p>
                 }
-                     <button type='submit' className="btn btn-success text-white mt-4">Sign Up</button>
+                     <button type='submit' className="btn btn-primary text-white mt-4">Sign Up</button>
 
                     <p className='text-center font-bold text-md'>Or</p>
           <div className='text-center  '>
@@ -115,7 +123,7 @@ console.log(err.code)
 </button></div>
 
 
-                     <p className='text-center mt-4 font-semibold  '> Have an account?  <Link to='/auth/login' className='text-red-600'>Login</Link></p>
+<p className='text-center mt-4 font-semibold  '> Have an account?  <Link to='/auth/login' className='text-red-600'>Login</Link></p>
                    </fieldset>
                  </div>
                </div>

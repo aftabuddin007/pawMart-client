@@ -39,13 +39,17 @@ const categoryData = [
 const PetCategory = () => {
     return (
     
-     <div className="max-w-7xl mx-auto">
+     <div className="max-w-7xl mx-auto mb-20">
       <div className="py-6 px-3">
-        <h2 className="text-3xl font-extrabold text-center my-10">
+        <h2  animate={{ y: 10 }} className="text-3xl font-bold text-center mb-10">
           Shop by Category
         </h2>
 
-        <div className="grid grid-cols-4 gap-6">
+        <div 
+       
+       
+       
+        className="grid grid-cols-4 gap-6">
           {categoryData.map((item) => (
             <Link
               key={item.id}
@@ -65,9 +69,12 @@ const PetCategory = () => {
               </p>
             </Link>
           ))}
-        </div>
+          
+        </div> 
       </div>
     </div>
+    
+    
   )
 };
 
