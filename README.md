@@ -1,6 +1,6 @@
 # PawMart
 
-**Live Site:** [https://your-live-site-url.example.com](https://your-live-site-url.example.com)
+**Live Site:** [https://pawmart777.netlify.app/](https://pawmart777.netlify.app/)
 
 PawMart connects local pet owners and buyers for pet adoptions and care products. Built with **React**, **Firebase**, and **MongoDB**, it promotes adopting pets instead of buying.
 
