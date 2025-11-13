@@ -27,7 +27,7 @@ const formData = {
 
 }
 // console.log({formData})
-fetch('http://localhost:3000/pet_product',{
+fetch('https://pawmart-server-one.vercel.app/pet_product',{
     method:'POST',
     headers:{
         "content-type":"application/json",
@@ -35,7 +35,7 @@ fetch('http://localhost:3000/pet_product',{
     body:JSON.stringify(formData)
 }).then(res=>res.json())
 .then(data=>{
-    console.log(data)
+    // console.log(data)
     toast.success("Product Listing Successful.")
     form.reset()
     navigate('/pets-supplies')

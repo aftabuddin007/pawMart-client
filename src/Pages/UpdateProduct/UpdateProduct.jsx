@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const UpdateProduct = () => {
   const nevigate = useNavigate()
     const {user} = use(AuthContext)
-    console.log(user)
+    // console.log(user)
     const data = useLoaderData()
     const update = data.result
         const {name,price,_id,} = update;
@@ -28,8 +28,8 @@ additionalNotes: form.notes.value
 
 
         }
- console.log({formData})
- fetch('http://localhost:3000/orders',{
+//  console.log({formData})
+ fetch('https://pawmart-server-one.vercel.app/orders',{
     method:'POST',
     headers:{
         "content-type":"application/json",
@@ -37,7 +37,7 @@ additionalNotes: form.notes.value
     body:JSON.stringify(formData)
 }).then(res=>res.json())
 .then(data=>{
-    console.log(data)
+    // console.log(data)
     toast.success('Your Order is Placed Successfully')
     nevigate('/')
 

@@ -10,7 +10,7 @@ const categoryName = decodeURIComponent(name)
   const [loading, setLoading] = useState(true);
 useEffect(()=>{
     setLoading(true)
-    fetch(`http://localhost:3000/filterProduct?category=${categoryName}`)
+    fetch(`https://pawmart-server-one.vercel.app/filterProduct?category=${categoryName}`)
     .then(res=>res.json())
     .then(data=>{
         setProducts(data)

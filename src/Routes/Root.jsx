@@ -25,14 +25,14 @@ const router = createBrowserRouter([
        {
     path:'/',
     element:<HomePage></HomePage>,
-    loader:()=>fetch('http://localhost:3000/recent-product'),
+    loader:()=>fetch('https://pawmart-server-one.vercel.app/recent-product'),
     hydrateFallbackElement:<Loading></Loading>
     
   },
        {
     path:'/pets-supplies',
     element:<PetProducts></PetProducts>,
-    loader:() => fetch('http://localhost:3000/pet_product'),
+    loader:() => fetch('https://pawmart-server-one.vercel.app/pet_product'),
         hydrateFallbackElement:<Loading></Loading>
 
     
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
     element:(<PrivateRoute>
       <NewUpdatePro></NewUpdatePro>
     </PrivateRoute>),
-     loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`),
+     loader:({params}) => fetch(`https://pawmart-server-one.vercel.app/pet_product/${params.id}`),
 
   }
   ,{
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
     element:(<PrivateRoute>
       <UpdateProduct></UpdateProduct>
     </PrivateRoute>),
-     loader:({params}) => fetch(`http://localhost:3000/pet_product/${params.id}`),
+     loader:({params}) => fetch(`https://pawmart-server-one.vercel.app/pet_product/${params.id}`),
          
 
   }

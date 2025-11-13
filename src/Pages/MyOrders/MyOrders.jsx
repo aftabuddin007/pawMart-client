@@ -12,7 +12,7 @@ const MyOrders = () => {
     const [orders,setOrders] = useState([])
     const [loading,setLoading] = useState(true)
     useEffect(()=>{
-      fetch(`http://localhost:3000/orders?email=${user?.email}`,{
+      fetch(`https://pawmart-server-one.vercel.app/orders?email=${user?.email}`,{
         headers:{
         authorization:`Bearer ${user.accessToken}`
 

@@ -11,7 +11,7 @@ const MyListing = () => {
         const [loading,setLoading] = useState(true)
   
         useEffect(()=>{
-          fetch(`http://localhost:3000/pet_products?email=${user?.email}`,{
+          fetch(`https://pawmart-server-one.vercel.app/pet_products?email=${user?.email}`,{
             headers:{
         authorization:`Bearer ${user.accessToken}`
 
@@ -43,7 +43,7 @@ const MyListing = () => {
 
 
 
-    fetch(`http://localhost:3000/pet_product/${id}`,{
+    fetch(`https://pawmart-server-one.vercel.app/pet_product/${id}`,{
         method:'DELETE',
         headers:{
             "content-type":"application/json",
@@ -51,7 +51,7 @@ const MyListing = () => {
         
     }).then(res=>res.json())
     .then(data=>{
-        console.log(data)
+        // console.log(data)
  setOrders(orders.filter(item => item._id !== id));
 
         Swal.fire({

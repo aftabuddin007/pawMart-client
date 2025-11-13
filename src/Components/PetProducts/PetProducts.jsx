@@ -13,10 +13,10 @@ const PetProducts = () => {
         e.preventDefault()
         const searchText = e.target.search.value
         console.log(searchText)
-       fetch(`http://localhost:3000/search?search=${searchText}`) 
+       fetch(`https://pawmart-server-one.vercel.app/search?search=${searchText}`) 
        .then(res=>res.json())
        .then(data=>{
-        console.log(data)
+        // console.log(data)
         setProducts(data)
         setLoading(false)
        })
@@ -27,8 +27,8 @@ const PetProducts = () => {
         setCategory(selected)
         setLoading(true)
 
-        const url = selected ==='All'?`http://localhost:3000/filterProduct`
-        :`http://localhost:3000/filterProduct?category=${selected}`;
+        const url = selected ==='All'?`https://pawmart-server-one.vercel.app/filterProduct`
+        :`https://pawmart-server-one.vercel.app/filterProduct?category=${selected}`;
         fetch(url)
         .then(res=>res.json())
         .then(data=>{

@@ -18,7 +18,7 @@ const {signInEmail,googleSignIn} = use(AuthContext)
         signInEmail(email,password)
         .then(res=>{
             const user = res.user
-            console.log(user)
+            // console.log(user)
             toast.success('LogIn Successfully.')
             navigate(location.state || '/')
             form.reset()

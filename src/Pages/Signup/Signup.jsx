@@ -65,7 +65,7 @@ console.log(err.code)
         googleSignIn()
          .then(res=>{
         const user = res.user
-        console.log(user)
+        // console.log(user)
         toast.success('Login Successful')
         navigate(`${location.state ? location.state : '/'}`)
       })

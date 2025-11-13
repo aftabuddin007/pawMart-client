@@ -30,8 +30,8 @@ const formData = {
     email:form.email.value,
 
 }
-console.log({formData})
-fetch(`http://localhost:3000/pet_product/${item._id}`,{
+// console.log({formData})
+fetch(`https://pawmart-server-one.vercel.app/pet_product/${item._id}`,{
     method:'PUT',
     headers:{
         "content-type":"application/json",
@@ -39,7 +39,7 @@ fetch(`http://localhost:3000/pet_product/${item._id}`,{
     body:JSON.stringify(formData)
 }).then(res=>res.json())
 .then(data=>{
-    console.log(data)
+    // console.log(data)
     toast.success("Product update Successfully.")
     navigate('/my-list')
 })
