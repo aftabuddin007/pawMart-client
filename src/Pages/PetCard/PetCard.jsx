@@ -1,50 +1,88 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { FaMapMarkerAlt, FaStar } from 'react-icons/fa';
 
-const PetCard = ({product}) => {
-    // console.log(product)
-    const {name,category,price,location,image,_id} = product;
-    return (
-        <div>
-            <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2 group">
-      {/* Image Section */}
+const PetCard = ({ product }) => {
+  const {
+    name,
+    category,
+    price,
+    location,
+    image,
+    description,
+    status = "Available",
+    rating = 4.5,
+    date = "2025-01-01",
+    _id
+  } = product;
+
+  return (
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden group">
+      
+      {/* Image */}
       <div className="relative">
         <img
           src={image}
-          alt="Pet"
-          className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+          alt={name}
+          className="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className="absolute top-3 right-3 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow">
+
+        {/* Category Badge */}
+        <span className="absolute top-3 left-3 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
           {category}
-        </div>
+        </span>
+
+        {/* Status Badge */}
+        <span className="absolute top-3 right-3 bg-green-500 text-white text-xs px-3 py-1 rounded-full">
+          {status}
+        </span>
       </div>
 
-      {/* Content Section */}
-      <div className="p-5 text-center">
-        <h3 className="text-2xl font-bold text-gray-800 group-hover:text-amber-600 transition-colors">
+      {/* Content */}
+      <div className="p-5">
+        {/* Title */}
+        <h3 className="text-lg font-bold text-gray-800 group-hover:text-blue-600 transition">
           {name}
         </h3>
 
-        <p className="text-gray-600 mt-2 text-sm">
-          {location}
+        {/* Short Description */}
+        <p className="text-sm text-gray-600 mt-2 line-clamp-2">
+          {description || "High-quality pet supplies designed for comfort, safety, and everyday use."}
         </p>
 
-        <p className="text-lg font-semibold mt-3 text-gray-900">
-          Price: ${price}
-        </p>
+        {/* Meta Info */}
+        <div className="mt-4 space-y-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2">
+            <FaMapMarkerAlt className="text-blue-500" />
+            <span>{location}</span>
+          </div>
 
-        <div className="mt-5">
-          <Link
-            to={`/product-details/${_id}`}
-            className="btn btn-outline btn-info  font-semibold px-5 py-2 rounded-full transition-all duration-300 shadow-md hover:shadow-lg"
-          >
-            See Details →
-          </Link>
+          <div className="flex items-center justify-between">
+            <span className="font-semibold text-gray-900">
+              $ {price}
+            </span>
+
+            <div className="flex items-center gap-1 text-yellow-400">
+              <FaStar />
+              <span className="text-gray-700 text-sm">{rating}</span>
+            </div>
+          </div>
+
+          <p className="text-xs text-gray-400">
+            Added on: {date}
+          </p>
         </div>
+
+        {/* Button */}
+        <Link
+          to={`/product-details/${_id}`}
+          className="mt-5 inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-full font-semibold transition duration-300"
+        >
+          View Details
+        </Link>
       </div>
     </div>
-        </div>
-    );
+  );
 };
 
 export default PetCard;

@@ -27,43 +27,54 @@ const heroImage = [
 
 const HeroBanner = () => {
     return (
-        <div>
-            <div className='min-h-screen'>
-           <div className="w-full h-[90vh] relative">
+        <section className="relative w-full h-[70vh]">
       <Swiper
         modules={[Autoplay, Pagination, Navigation, EffectFade]}
         effect="fade"
-        loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
+        loop
+        autoplay={{ delay: 3500, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        navigation={true}
+        navigation
         className="h-full"
       >
         {heroImage.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="h-full w-full bg-cover bg-center flex flex-col justify-center items-center text-white"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
+              className="h-full w-full bg-cover bg-center flex items-center justify-center"
+              style={{ backgroundImage: `url(${slide.image})` }}
             >
-              <div className="bg-black/40 p-6 rounded-2xl text-center">
-                <h2 className="text-4xl md:text-6xl font-bold mb-4">
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/40"></div>
+
+              {/* Content */}
+              <div className="relative z-10 text-center text-white px-6 animate-fadeIn">
+                <h1 className="text-3xl md:text-5xl font-extrabold mb-4">
                   {slide.slogan}
-                </h2>
-                <p className="text-lg md:text-2xl">{slide.subtitle}</p>
+                </h1>
+                <p className="text-base md:text-xl mb-6 max-w-xl mx-auto">
+                  {slide.subtitle}
+                </p>
+
+                {/* CTA */}
+                <div className='flex gap-4 justify-center'>
+                  <button className="btn btn-outline px-8">
+                  Explore More
+                </button>
+                <button className="btn btn-primary px-8">
+                  Shop Now
+                </button>
+                </div>
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
 
-        </div>
-        </div>
+      {/* Scroll Indicator */}
+       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 text-white animate-bounce pointer-events-none">
+    <span className="text-xl">Scroll ↓</span>
+  </div>
+    </section>
     );
 };
 

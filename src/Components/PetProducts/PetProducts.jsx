@@ -84,7 +84,7 @@ const PetProducts = () => {
 </fieldset>
                 </div>
             </div>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-10 mb-20'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-10 mb-20'>
         {
             products.map(product => <PetCard key={product._id} product={product}  ></PetCard>)
         }

@@ -27,7 +27,7 @@ care products.
   </nav>
   <nav>
     <h6 className="footer-title">Company</h6>
-    <Link className="link link-hover">About us</Link>
+    <Link to='/blog' className="link link-hover">Blog</Link>
     <Link className="link link-hover">Policy</Link>
     <Link className="link link-hover">Terms Of Service</Link>
   </nav>
