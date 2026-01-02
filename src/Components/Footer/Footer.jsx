@@ -23,7 +23,7 @@ care products.
     <Link to='/' className="link link-hover">Home</Link>
     <Link to='/pets-supplies' className="link link-hover">Pet/Supplies</Link>
     <Link to ='/auth/login' className="link link-hover">Login</Link>
-    <Link to='/auth/signup' className="link link-hover">RSignup</Link>
+    <Link to='/auth/signup' className="link link-hover">Signup</Link>
   </nav>
   <nav>
     <h6 className="footer-title">Company</h6>

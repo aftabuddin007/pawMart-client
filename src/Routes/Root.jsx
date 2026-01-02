@@ -15,6 +15,7 @@ import NewUpdatePro from "../Components/NewUpdatePro/NewUpdatePro";
 import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import CategoryByProduct from "../Pages/CategoryByProduct/CategoryByProduct";
 import Loading from "../Pages/Loading/Loading";
+import BlogPage from "../Pages/Blog/Blog";
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
 
     
   },{
+    path:'/blog',
+    element:<BlogPage></BlogPage>
+  }
+  
+  ,{
     path:'/add-list',
     element:<PrivateRoute>
       <AddListPet></AddListPet>

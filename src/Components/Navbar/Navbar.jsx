@@ -36,7 +36,8 @@ const handleTheme = (checked)=>{
 
 
     return (
-        <div className='bg-base-200  '>
+       
+         <div className='bg-base-200  sticky top-0 z-50 shadow '>
             <div className="navbar max-w-7xl mx-auto ">
   <div className="navbar-start">
     <div className="dropdown z-50">
@@ -48,6 +49,7 @@ const handleTheme = (checked)=>{
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
         <li><NavLink to='/'className={navLinkClass}> Home</NavLink></li>
       <li><NavLink to='/pets-supplies' className={navLinkClass}> Pets/Supplies</NavLink></li>
+      <li><NavLink to='/blog' className={navLinkClass}> Blog</NavLink></li>
       <li className='lg:hidden  '> <input onChange={(e)=>handleTheme(e.target.checked)} 
     defaultChecked={localStorage.getItem('theme') === "dark"}
     type="checkbox" value="synthwave" className="toggle theme-controller text-black-200 " />
@@ -73,6 +75,8 @@ const handleTheme = (checked)=>{
     <ul className="menu menu-horizontal px-1 text-xl ">
       <li><NavLink to='/'className={navLinkClass}> Home</NavLink></li>
       <li><NavLink to='/pets-supplies' className={navLinkClass}> Pets/Supplies</NavLink></li>
+      <li><NavLink to='/blog' className={navLinkClass}> Blog</NavLink></li>
+
       {user &&<> 
       <li><NavLink to='/add-list' className={navLinkClass}> Add Listing</NavLink></li>
       <li><NavLink to='/my-list' className={navLinkClass}> My Listings</NavLink></li>
@@ -132,6 +136,7 @@ const handleTheme = (checked)=>{
   </div>
 </div>
         </div>
+      
     );
 };
 
