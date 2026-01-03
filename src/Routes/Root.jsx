@@ -16,6 +16,11 @@ import PrivateRoute from "../Components/PrivateRoute/PrivateRoute";
 import CategoryByProduct from "../Pages/CategoryByProduct/CategoryByProduct";
 import Loading from "../Pages/Loading/Loading";
 import BlogPage from "../Pages/Blog/Blog";
+import ProfilePage from "../Pages/MyProfile/MyProfile";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import Dashboardlayout from "../Components/AuthLayout/DashboardLayout/Dashboardlayout";
+import ContactPage from "../Pages/Contact/Contact";
+import TermsPrivacy from "../Pages/TermsPoliecy/TermPoliecy";
 
 
 const router = createBrowserRouter([
@@ -40,24 +45,28 @@ const router = createBrowserRouter([
   },{
     path:'/blog',
     element:<BlogPage></BlogPage>
+  },{
+    path:'/contact',
+    element:<ContactPage></ContactPage>
+  },{
+    path:'terms-policy',
+    element:<TermsPrivacy></TermsPrivacy>
   }
   
+  
+    
   ,{
-    path:'/add-list',
-    element:<PrivateRoute>
-      <AddListPet></AddListPet>
-    </PrivateRoute>
-  },{
-    path:'/my-list',
-    element:<PrivateRoute> 
-      <MyListing></MyListing>
-    </PrivateRoute>
+    
   },{
     path:'/product-details/:id',
     element:(
       <ProductDetails></ProductDetails>
     ),
-  },{
+  },
+    
+    
+  
+  {
     path:'/update-product/:id',
     element:(<PrivateRoute>
       <NewUpdatePro></NewUpdatePro>
@@ -74,20 +83,47 @@ const router = createBrowserRouter([
          
 
   }
-  
-  
   ,{
-    path:'/my-order',
-    element:<PrivateRoute>
-      <MyOrders></MyOrders>
-    </PrivateRoute>,
-    
-  },{
+    path:'myProfile',
+    element:<ProfilePage></ProfilePage>
+  }
+  
+  
+  
+ ,{
     path:'/category/:name',
     element:<CategoryByProduct></CategoryByProduct>
   }
     ]
   },{
+
+
+path:'/dashboard',
+element:<Dashboardlayout></Dashboardlayout>,
+children:[
+ {
+ 
+    path:'my-order',
+    element:<MyOrders></MyOrders>
+    ,
+    
+  
+ },{
+  path:'add-list',
+    element:<PrivateRoute>
+      <AddListPet></AddListPet>
+    </PrivateRoute>
+ },{
+  path:'my-list',
+    element:<PrivateRoute> 
+      <MyListing></MyListing>
+    </PrivateRoute>
+ }
+]
+  },
+  
+  
+  {
     path:'/auth',
     element:<AuthLayout></AuthLayout>,
     children:[

@@ -55,9 +55,9 @@ const handleTheme = (checked)=>{
     type="checkbox" value="synthwave" className="toggle theme-controller text-black-200 " />
 </li>
       {user &&<> 
-      <li><NavLink to='/add-list' className={navLinkClass}> Add Listing</NavLink></li>
-      <li><NavLink to='/my-list' className={navLinkClass}> My Listings</NavLink></li>
-      <li><NavLink to='/my-order' className={navLinkClass}> My Orders</NavLink></li>
+       <li><NavLink to='/contact' className={navLinkClass}> Contact</NavLink></li>
+      <li><NavLink to='/terms-policy' className={navLinkClass}>Terms & Policy</NavLink></li>
+      {/* <li><NavLink to='/my-order' className={navLinkClass}> My Orders</NavLink></li> */}
       
       </>}
       </ul>
@@ -65,8 +65,8 @@ const handleTheme = (checked)=>{
     <Link to ='/' className='flex gap-2'> 
 
     <a className="btn btn-ghost text-xl font-bold "><img src="https://i.ibb.co.com/5gShN8km/images-1-removebg-preview.png" alt="" className='h-10 w-10' /> 
-    <h1 class="text-[12px] sm:text-2xl font-extrabold text-purple-500 font-[Comic_Sans_MS] tracking-wide">
-  <span class="italic">Paw</span><span class="not-italic">Mart</span>
+    <h1 className="text-[12px] sm:text-2xl font-extrabold text-purple-500 font-[Comic_Sans_MS] tracking-wide">
+  <span className="italic">Paw</span><span class="not-italic">Mart</span>
 </h1>
     </a>
     </Link>
@@ -78,9 +78,9 @@ const handleTheme = (checked)=>{
       <li><NavLink to='/blog' className={navLinkClass}> Blog</NavLink></li>
 
       {user &&<> 
-      <li><NavLink to='/add-list' className={navLinkClass}> Add Listing</NavLink></li>
-      <li><NavLink to='/my-list' className={navLinkClass}> My Listings</NavLink></li>
-      <li><NavLink to='/my-order' className={navLinkClass}> My Orders</NavLink></li>
+      <li><NavLink to='/contact' className={navLinkClass}> Contact</NavLink></li>
+      <li><NavLink to='/terms-policy' className={navLinkClass}>Terms & Policy</NavLink></li>
+      {/* <li><NavLink to='/my-order' className={navLinkClass}> My Orders</NavLink></li> */}
       
       </>}
       
@@ -105,7 +105,7 @@ const handleTheme = (checked)=>{
 <div className="dropdown dropdown-end z-50">
   <div tabIndex={0} role="button" className=" m-1"><img src={user?.photoURL } alt="image" className='w-12 h-12 rounded-full object-cover'/></div>
   <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52  shadow-sm">
-    <li> <NavLink to='/my-profile' className='btn'>My Profile</NavLink>    </li>
+    <li> <NavLink to='/myProfile' className='btn'>My Profile</NavLink>    </li>
     <li> <NavLink to='/dashboard' className='btn'>Dashboard</NavLink>    </li>
 <li>  <p>{user.email}</p> </li>
     <li><button onClick={handleLogout} className="btn btn-primary
