@@ -10,12 +10,14 @@ const [loading,setLoading]=useState(true)
 const {user} = use(AuthContext)
 // console.log(user)
   useEffect(()=>{
-    fetch(`https://pawmart-server-one.vercel.app/pet_product/${id}`,{
-      headers:{
-        authorization:`Bearer ${user.accessToken}`
+    fetch(`https://pawmart-server-one.vercel.app/pet_product/${id}`,
+    //   {
+    //   headers:{
+    //     authorization:`Bearer ${user.accessToken}`
 
-      }
-    })
+    //   }
+    // }
+  )
 .then(res=>res.json())
 .then(data=>{
   setDetails(data.result)

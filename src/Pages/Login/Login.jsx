@@ -66,12 +66,15 @@ const {signInEmail,googleSignIn} = use(AuthContext)
           <input name='email' 
           type="email" 
         //   ref={emailRef}
+        defaultValue={'user1@gmail.com'}
            
            className="input w-full" placeholder="Email" required />
           {/* password */}
           <div className='relative'>
             <label className="label">Password</label>
-          <input name='password' type={show ? 'text':'password'} className="input w-full" placeholder="Password" required />
+          <input name='password' type={show ? 'text':'password'} className="input w-full"
+          defaultValue={'123aA@'}
+          placeholder="Password" required />
           <span onClick={()=>setShow(!show)} className='absolute right-7 top-8 cursor-pointer z-50'>{show ? <FaRegEye />:<FaEyeSlash />}</span>
           </div>
           {

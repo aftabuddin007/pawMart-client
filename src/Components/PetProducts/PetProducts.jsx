@@ -1,23 +1,46 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import PetCard from '../../Pages/PetCard/PetCard';
-import { useLoaderData } from 'react-router';
+// import { useLoaderData } from 'react-router';
 import Loading from '../../Pages/Loading/Loading';
 
 const PetProducts = () => {
-    const data = useLoaderData();
-    const [products,setProducts] = useState(data)
+    // const data = useLoaderData();
+    const [products,setProducts] = useState([])
     const [loading,setLoading] = useState(false)
     const [category,setCategory]=useState('All')
+    const [sort, setSort] = useState('');
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+   const fetchProducts = (page = 1, sortType = sort) => {
+    setLoading(true);
+
+    fetch(`https://pawmart-server-one.vercel.app/pet_product?page=${page}&sort=${sortType}`)
+      .then(res => res.json())
+      .then(data => {
+        setProducts(data.products);
+        setTotalPages(data.totalPages);
+        setCurrentPage(data.currentPage);
+        setLoading(false);
+      });
+  };
+    useEffect(() => {
+    fetchProducts(1);
+  }, []);
+
     const handleSearch = (e)=>{
         e.preventDefault()
         const searchText = e.target.search.value
-        console.log(searchText)
+        // console.log(searchText)\
+        setLoading(true)
        fetch(`https://pawmart-server-one.vercel.app/search?search=${searchText}`) 
        .then(res=>res.json())
        .then(data=>{
         // console.log(data)
-        setProducts(data)
+        // setProducts(data)
+         setProducts(Array.isArray(data) ? data : data.products || []);
         setLoading(false)
        })
     }
@@ -33,10 +56,24 @@ const PetProducts = () => {
         .then(res=>res.json())
         .then(data=>{
             // console.log(data)
-            setProducts(data)
+            // setProducts(data)
+             setProducts(Array.isArray(data) ? data : data.products || []);
             setLoading(false)
         })
     }
+
+    const handleSort = (e) => {
+    const sortType = e.target.value;
+    setSort(sortType);
+    fetchProducts(1, sortType);
+  };
+
+  // 🔹 Pagination Click
+  const handlePageChange = (page) => {
+    fetchProducts(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
     if(loading){
         return <Loading></Loading>
     }
@@ -72,15 +109,20 @@ const PetProducts = () => {
  </form>
                 </div>
                 <div>
-                    <fieldset className="fieldset">
-  <select  onChange={handleFilter} value={category} className="select">
+                    <fieldset className="fieldset flex gap-4">
+  <select  onChange={handleFilter} value={category} className="select select-sm">
     <option value='All'>All Categories</option>
     <option value='Pets'>Pets</option>
     <option value='Pet Food'>Pet Food</option>
     <option value='Pet Care Product'>Pet Care Product</option>
     <option value='Accessories'>Accessories</option>
   </select>
-  
+   {/* Price Sort */}
+  <select onChange={handleSort} className="select select-sm">
+    <option value="">Price</option>
+    <option value="low">Low to High</option>
+    <option value="high">High to Low</option>
+  </select>
 </fieldset>
                 </div>
             </div>
@@ -91,6 +133,22 @@ const PetProducts = () => {
 
 
         </div>
+ {/* 📄 Pagination */}
+      <div className="flex justify-center mt-12 mb-20">
+        <div className="join">
+          {[...Array(totalPages).keys()].map(page => (
+            <button
+              key={page}
+              onClick={() => handlePageChange(page + 1)}
+              className={`join-item btn btn-sm ${
+                currentPage === page + 1 ? 'btn-active btn-primary' : ''
+              }`}
+            >
+              {page + 1}
+            </button>
+          ))}
+        </div>
+</div>
         </div>
     );
 };
