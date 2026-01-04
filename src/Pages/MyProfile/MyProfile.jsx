@@ -41,8 +41,8 @@ const ProfilePage = () => {
         {/* Left Column - Photo Upload */}
         <div className="lg:col-span-1">
           <div className="rounded-xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold  mb-6">Your Photo</h2>
-            <p className=" text-sm mb-6">This will be displayed on your profile</p>
+            <h2 className="text-lg font-semibold  mb-6">My Photo</h2>
+           
             
             <div className="flex flex-col items-center">
               {/* Profile Image */}
