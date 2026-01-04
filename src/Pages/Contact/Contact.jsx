@@ -28,10 +28,10 @@ const ContactPage = () => {
   const [errors, setErrors] = useState({});
 
   const contactInfo = {
-    phone: '+1 (555) 123-4567',
+    phone: '+88 018 123-4567',
     email: 'support@company.com',
     address: '123 Business Street, Suite 100\nSan Francisco, CA 94107',
-    hours: 'Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM\nSunday: Closed'
+    hours: '12:00 PM - 12:00 PM, Mon - Sun'
   };
 
   const socialLinks = [

@@ -105,7 +105,7 @@ const handleTheme = (checked)=>{
 <div className="dropdown dropdown-end z-50">
   <div tabIndex={0} role="button" className=" m-1"><img src={user?.photoURL } alt="image" className='w-12 h-12 rounded-full object-cover'/></div>
   <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52  shadow-sm">
-    <li> <NavLink to='/myProfile' className='btn'>My Profile</NavLink>    </li>
+    <li> <NavLink to='/dashboard/myProfile' className='btn'>My Profile</NavLink>    </li>
     <li> <NavLink to='/dashboard' className='btn'>Dashboard</NavLink>    </li>
 <li>  <p>{user.email}</p> </li>
     <li><button onClick={handleLogout} className="btn btn-primary
