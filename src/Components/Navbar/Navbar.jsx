@@ -50,16 +50,17 @@ const handleTheme = (checked)=>{
         <li><NavLink to='/'className={navLinkClass}> Home</NavLink></li>
       <li><NavLink to='/pets-supplies' className={navLinkClass}> Pets/Supplies</NavLink></li>
       <li><NavLink to='/blog' className={navLinkClass}> Blog</NavLink></li>
-      <li className='lg:hidden  '> <input onChange={(e)=>handleTheme(e.target.checked)} 
-    defaultChecked={localStorage.getItem('theme') === "dark"}
-    type="checkbox" value="synthwave" className="toggle theme-controller text-black-200 " />
-</li>
+     
       {user &&<> 
        <li><NavLink to='/contact' className={navLinkClass}> Contact</NavLink></li>
       <li><NavLink to='/terms-policy' className={navLinkClass}>Terms & Policy</NavLink></li>
       {/* <li><NavLink to='/my-order' className={navLinkClass}> My Orders</NavLink></li> */}
       
       </>}
+       <li className='lg:hidden  '> <input onChange={(e)=>handleTheme(e.target.checked)} 
+    defaultChecked={localStorage.getItem('theme') === "dark"}
+    type="checkbox" value="synthwave" className="toggle theme-controller text-black-200 " />
+</li>
       </ul>
     </div>
     <Link to ='/' className='flex gap-2'> 
