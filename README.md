@@ -1,4 +1,4 @@
-# 🐾 PawMart – Pet Adoption & Supply Platform  
+# 🐾 PawMart – Pet Adoption, Supply & accessaries Platform  
 
 <p align="center">
   <a href="https://pawmart777.netlify.app/">
