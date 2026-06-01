@@ -1,123 +1,216 @@
-# 🐾 PawMart – Pet Adoption, Supply & accessaries Platform  
+<div align="center">
 
-<p align="center">
-  <a href="https://pawmart777.netlify.app/">
-    <img src="https://img.shields.io/badge/Live-Demo-green?style=for-the-badge&logo=netlify" />
-  </a>
-  <a href="https://github.com/aftabuddin007">
-    <img src="https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github" />
-  </a>
-</p>
+# 🐾 PawMart
 
----
+### Pet Adoption, Supply & Accessories Platform
 
-## 🔹 Overview  
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-pawmart777.netlify.app-brightgreen?style=for-the-badge&logo=netlify)](https://pawmart777.netlify.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-aftabuddin007-181717?style=for-the-badge&logo=github)](https://github.com/aftabuddin007)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
 
-**PawMart** is a community-driven, full-stack pet adoption and supply platform designed to connect pet owners, breeders, and buyers in a unified digital marketplace. The platform promotes an **“Adopt, Don’t Shop”** philosophy while also supporting pet-related commerce such as food, accessories, and care products.  
+*Connecting pet lovers, breeders, and buyers — because every pet deserves a loving home.*
 
-Users can explore available pets and products, place orders, and interact with listings through a clean and responsive interface. The system provides a seamless experience with secure authentication, private routes, and dynamic data handling.  
-
-From a technical perspective, PawMart demonstrates **modern full-stack development practices**, including a React-based frontend with reusable components and responsive UI, a Node.js & Express backend with RESTful APIs, and MongoDB for efficient data storage. Firebase Authentication ensures secure user access, while additional features like PDF report generation, filtering, and animations enhance usability and real-world functionality.  
-
-This project reflects an **end-to-end product development workflow**, showcasing strong skills in frontend architecture, backend API design, database management, authentication, and user experience design.
+</div>
 
 ---
 
-## 🌐 Live Demo  
+## 📖 Overview
 
-🔗 https://pawmart777.netlify.app/
+**PawMart** is a community-driven, full-stack pet adoption and supply marketplace that unifies pet owners, breeders, and buyers in a single digital platform. Built around an **"Adopt, Don't Shop"** philosophy, it also supports everyday pet commerce — food, accessories, and care products.
 
----
-
-## 📸 Screenshots  
-
-### 🏠 Home Page  
-![Home](https://i.ibb.co.com/9m1cbzFy/image.png)
-
-### 🐶 Listings / Dashboard  
-![Listings](https://i.ibb.co.com/5X3tk30C/image.png)
+The platform delivers a seamless experience with secure authentication, private routes, CRUD-based listing management, order tracking, and downloadable PDF reports — all wrapped in a clean, fully responsive interface.
 
 ---
 
-## ✨ Key Features  
+## 🌐 Live Demo
 
-- 🐾 Adopt-first marketplace for pets & supplies  
-- 🔐 Firebase Authentication (Email/Password + Google Login)  
-- 🔒 Private routes for secure user actions  
-- 🧾 Add, update, and delete listings (CRUD operations)  
-- 🛒 Order system with detailed order management  
-- 📄 Export order reports as PDF (jsPDF + AutoTable)  
-- 🔍 Filter listings by category  
-- 🔔 Toast notifications for all user actions  
-- 📱 Fully responsive across all devices  
+🔗 **[https://pawmart777.netlify.app](https://pawmart777.netlify.app/)**
 
 ---
 
-## 🏠 Pages & Functionalities  
+## 📸 Screenshots
 
-### 🌐 Public Pages  
-- **Home Page:** Banner, categories, recent listings, awareness & hero sections  
-- **Pets & Supplies:** Browse all listings with category filtering  
-- **Authentication:** Login & Register with Firebase  
-
-### 🔐 Private Pages  
-- **Add Listing:** Create new pet/product listings  
-- **Listing Details:** Full details + order modal  
-- **My Listings:** Manage personal listings (update/delete)  
-- **My Orders:** View orders & download PDF report  
-
-### ⚠️ System Pages  
-- **404 Page:** Custom page without Navbar & Footer  
+| Home Page | Dashboard / Listings |
+|:---------:|:--------------------:|
+| ![Home](https://i.ibb.co.com/9m1cbzFy/image.png) | ![Listings](https://i.ibb.co.com/5X3tk30C/image.png) |
 
 ---
 
-## 🧠 Technical Highlights  
+## ✨ Features
 
-- ⚡ Scalable REST API built with **Node.js & Express**  
-- 🔒 Secure authentication using **Firebase & JWT concepts**  
-- 📡 Optimized data fetching and state management  
-- 🧾 PDF generation using **jsPDF & AutoTable**  
-- 🎨 Clean UI with **Tailwind CSS**  
-- 🧩 Dynamic routing using **React Router**  
-- 🔔 Real-time feedback via **Toast / SweetAlert**  
-- 📱 Mobile-first responsive design  
-
----
-
-## 🛠 Tech Stack  
-
-### Frontend  
-- React  
-- React Router  
-- Tailwind CSS  
-- Firebase Authentication  
-- React Hot Toast / SweetAlert  
-- jsPDF & jsPDF-AutoTable  
-
-### Backend  
-- Node.js  
-- Express.js  
-- MongoDB  
+- 🐾 **Adopt-first marketplace** for pets and supplies
+- 🔐 **Firebase Authentication** — Email/Password and Google Sign-In
+- 🔒 **Private routes** for all user-specific actions
+- 🧾 **Full CRUD** — add, update, and delete listings
+- 🛒 **Order system** with structured order management
+- 📄 **PDF export** for order reports via jsPDF + AutoTable
+- 🔍 **Category filtering** for streamlined browsing
+- 🔔 **Toast & SweetAlert notifications** for all user interactions
+- 📱 **Fully responsive** across mobile, tablet, and desktop
 
 ---
 
-## ⚙️ Core Functional Flow  
+## 🗂️ Pages & Functionality
 
-- Users can register/login securely  
-- Browse pets or products by category  
-- View detailed listing information  
-- Place orders through a structured modal form  
-- Manage personal listings and orders  
-- Download order reports as PDF  
+### Public Pages
+| Page | Description |
+|------|-------------|
+| **Home** | Banner, categories, recent listings, hero & awareness sections |
+| **Pets & Supplies** | Browse all listings with category-based filtering |
+| **Login / Register** | Firebase-powered authentication |
+
+### Private Pages
+| Page | Description |
+|------|-------------|
+| **Add Listing** | Create new pet or product listings |
+| **Listing Details** | Full details view with order modal |
+| **My Listings** | Manage personal listings — edit or delete |
+| **My Orders** | View all orders and download PDF report |
+
+### System Pages
+| Page | Description |
+|------|-------------|
+| **404** | Custom not-found page (no Navbar/Footer) |
 
 ---
 
-## 📦 Installation & Setup  
+## 🛠️ Tech Stack
 
-### 1️⃣ Clone Repository  
+### Frontend
+| Technology | Purpose |
+|------------|---------|
+| React | UI framework |
+| React Router | Client-side routing |
+| Tailwind CSS | Styling & responsive layout |
+| Firebase Authentication | Secure user auth |
+| React Hot Toast / SweetAlert2 | User notifications |
+| jsPDF + jsPDF-AutoTable | PDF report generation |
+
+### Backend
+| Technology | Purpose |
+|------------|---------|
+| Node.js | Runtime environment |
+| Express.js | RESTful API framework |
+| MongoDB | Database |
+
+---
+
+## ⚙️ Architecture & Functional Flow
+
+```
+User Registration / Login (Firebase)
+        ↓
+Browse Pets & Products (Category Filtering)
+        ↓
+View Listing Details
+        ↓
+Place Order (Authenticated Modal Form)
+        ↓
+Manage Listings & Orders (Private Dashboard)
+        ↓
+Download PDF Order Report (jsPDF)
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js v18+
+- MongoDB instance (local or Atlas)
+- Firebase project credentials
+
+### 1. Clone the Repository
+
 ```bash
+# Frontend
 git clone https://github.com/aftabuddin007/pawmart-client
 
-  
+# Backend
+git clone https://github.com/aftabuddin007/pawmart-server
+```
 
-Just tell me 👍
+### 2. Install Dependencies
+
+```bash
+# Frontend
+cd pawmart-client
+npm install
+
+# Backend
+cd pawmart-server
+npm install
+```
+
+### 3. Configure Environment Variables
+
+**Frontend** — create a `.env.local` file:
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_API_BASE_URL=http://localhost:5000
+```
+
+**Backend** — create a `.env` file:
+```env
+MONGODB_URI=your_mongodb_connection_string
+PORT=5000
+```
+
+### 4. Run the Application
+
+```bash
+# Start backend
+cd pawmart-server
+npm start
+
+# Start frontend
+cd pawmart-client
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`.
+
+---
+
+## 🧠 Technical Highlights
+
+- **Scalable REST API** built with Node.js & Express
+- **Secure authentication** using Firebase with JWT concepts
+- **Optimized data fetching** and client-side state management
+- **PDF generation** with jsPDF & AutoTable for real-world usability
+- **Mobile-first** responsive design with Tailwind CSS
+- **Dynamic routing** with React Router protected routes
+- **Real-time feedback** via Toast and SweetAlert notifications
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/aftabuddin007/pawmart-client/issues).
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+Made with ❤️ by [Aftabuddin](https://github.com/aftabuddin007)
+
+⭐ Star this repo if you found it useful!
+
+</div>
