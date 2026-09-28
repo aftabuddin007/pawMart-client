@@ -45,7 +45,7 @@ const {signInEmail,googleSignIn} = use(AuthContext)
 
     return (
         <div>
-             <div className='items-center justify-center flex   min-h-screen  bg-gradient-to-t from-[#cfd9df] to-[#e2ebf0] h-screen w-full'>
+             <div className='items-center justify-center flex px-4  min-h-screen  bg-gradient-to-t from-[#cfd9df] to-[#e2ebf0] h-screen w-full'>
                         <title>PawMart - Login</title>
 
                 <div className="card  w-full max-w-sm shrink-0 shadow-2xl">
