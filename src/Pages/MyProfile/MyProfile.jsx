@@ -137,7 +137,7 @@ const ProfilePage = () => {
                 </label>
                 <div className="flex items-center p-4  rounded-lg border border-gray-200">
                   <Briefcase className="w-5 h-5  mr-3" />
-                  <span className="">{userData.role}</span>
+                  <span className="font-semibold">{userData.role}</span>
                 </div>
               </div>
             </div>

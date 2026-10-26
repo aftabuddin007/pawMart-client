@@ -21,7 +21,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import Dashboardlayout from "../Components/AuthLayout/DashboardLayout/Dashboardlayout";
 import ContactPage from "../Pages/Contact/Contact";
 import TermsPrivacy from "../Pages/TermsPoliecy/TermPoliecy";
-import DashboardCards from "../Pages/DashboardStatitics/DashboardStatistics";
+// import DashboardCards from "../Pages/DashboardStatitics/DashboardStatistics";
 
 
 const router = createBrowserRouter([
