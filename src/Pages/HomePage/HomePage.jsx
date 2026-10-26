@@ -9,6 +9,7 @@ import Community from '../Community/Community';
 import FAQ from '../Faq/FAQ';
 import HomeReview from '../../Components/ReviewCard';
 import Brands from '../Brands/Brands';
+import OurAchievements from '../../Components/Achievement/Achievement';
 
 const HomePage = () => {
 
@@ -25,6 +26,7 @@ const recentPawPromise = useLoaderData()
             <Brands></Brands>
             <PetCategory></PetCategory>
             <PetRecentList recentPawPromise={recentPawPromise}></PetRecentList>
+            <OurAchievements></OurAchievements>
             <AdoptPet></AdoptPet>
             <PetExpert></PetExpert>
             <HomeReview></HomeReview>
